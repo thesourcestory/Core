@@ -18,6 +18,7 @@ public class PdoxCore {
     @SidedProxy(clientSide = "pdox.core.proxy.ClientProxy",serverSide = "pdox.core.proxy.CommonProxy")
     public static CommonProxy proxy;
 
+    @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
         ModBlocks.init();
         ModItems.init();
@@ -25,9 +26,11 @@ public class PdoxCore {
         proxy.registerRenders();
     }
 
+    @Mod.EventHandler
     public static void init(FMLInitializationEvent event){
     }
 
+    @Mod.EventHandler
     public static void postInit(FMLPostInitializationEvent event){
     }
 }

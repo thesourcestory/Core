@@ -12,8 +12,9 @@ public class ModBlocks {
 
     }
 
-    public static void reg(Block block, String string){
-        GameRegistry.registerBlock(block, string);
+    public static void reg(Block block, String unlocalizedName){
+        block.setUnlocalizedName(unlocalizedName);
+        GameRegistry.registerBlock(block, unlocalizedName);
     }
 
 }

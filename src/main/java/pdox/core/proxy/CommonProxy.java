@@ -5,6 +5,8 @@ package pdox.core.proxy;
  */
 public class CommonProxy {
 
-    public void
+    public void registerRenders() {
+
+    }
 
 }

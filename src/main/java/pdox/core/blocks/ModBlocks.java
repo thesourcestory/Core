@@ -1,6 +1,8 @@
 package pdox.core.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -8,13 +10,15 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class ModBlocks {
 
-    public static void init(){
+    public static Block test = new Test(Material.ROCK, MapColor.GRAY);
 
+    public static void init(){
+        reg(test, "test");
     }
 
     public static void reg(Block block, String unlocalizedName){
-        block.setUnlocalizedName(unlocalizedName);
-        GameRegistry.registerBlock(block, unlocalizedName);
+        block.setRegistryName(unlocalizedName);
+        GameRegistry.register(block);
     }
 
 }

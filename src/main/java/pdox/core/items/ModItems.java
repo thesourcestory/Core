@@ -14,7 +14,7 @@ public class ModItems {
 
     public static void reg(Item item, String unlocalizedName){
         item.setUnlocalizedName(unlocalizedName);
-        GameRegistry.registerItem(item, unlocalizedName);
+        GameRegistry.register(item);
     }
 
 }

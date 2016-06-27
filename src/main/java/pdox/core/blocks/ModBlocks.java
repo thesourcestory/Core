@@ -3,22 +3,22 @@ package pdox.core.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import pdox.core.junk.BlockAndItemHelper;
 
 /**
  * Created by magnus97 on 19/05/2016.
  */
 public class ModBlocks {
 
-    public static Block test = new Test(Material.ROCK, MapColor.GRAY);
+    public static BlockAndItemHelper helper = new BlockAndItemHelper();
+
+    public static Block test = new Test(Material.ROCK);
 
     public static void init(){
-        reg(test, "test");
-    }
-
-    public static void reg(Block block, String unlocalizedName){
-        block.setRegistryName(unlocalizedName);
-        GameRegistry.register(block);
+        helper.registerBlock(test, "test");
     }
 
 }

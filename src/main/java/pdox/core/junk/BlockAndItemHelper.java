@@ -14,13 +14,15 @@ import pdox.core.blocks.ModBlocks;
  */
 public class BlockAndItemHelper {
 
+    private static String modid = "pdoxcore";
+
     public void renderBlock(Block block, int metadata, ModelResourceLocation location){
-        Item item = Item.getItemFromBlock(Block.REGISTRY.getObject(new ResourceLocation("pdox", block.getUnlocalizedName())));
+        Item item = Item.getItemFromBlock(Block.REGISTRY.getObject(block.getRegistryName()));
         ModelLoader.setCustomModelResourceLocation(item, metadata, location);
     }
 
     public void renderItem(Item item, int metadata, ModelResourceLocation location){
-        Item ritem = Item.REGISTRY.getObject(new ResourceLocation("pdox", item.getUnlocalizedName()));
+        Item ritem = Item.REGISTRY.getObject(item.getRegistryName());
         ModelLoader.setCustomModelResourceLocation(ritem, metadata, location);
     }
 

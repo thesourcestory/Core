@@ -1,8 +1,7 @@
-package pdox.core.items;
+package pdoxcore.items;
 
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import pdox.core.junk.BlockAndItemHelper;
+import pdoxcore.junk.BlockAndItemHelper;
 
 /**
  * Created by magnus97 on 22/05/2016.

@@ -1,7 +1,7 @@
-package pdox.core.items;
+package pdoxcore.items;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import pdox.core.junk.BlockAndItemHelper;
+import pdoxcore.junk.BlockAndItemHelper;
 
 /**
  * Created by magnus97 on 22/05/2016.

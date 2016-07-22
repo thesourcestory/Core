@@ -1,12 +1,9 @@
-package pdox.core.blocks;
+package pdoxcore.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.ItemBlock;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import pdox.core.junk.BlockAndItemHelper;
+import pdoxcore.junk.BlockAndItemHelper;
 
 /**
  * Created by magnus97 on 19/05/2016.
@@ -19,6 +16,8 @@ public class ModBlocks {
 
     public static void init(){
         helper.registerBlock(test, "test");
+
+        ModItemBlocks.init();
     }
 
 }

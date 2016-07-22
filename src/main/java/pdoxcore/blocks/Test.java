@@ -1,4 +1,4 @@
-package pdox.core.blocks;
+package pdoxcore.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

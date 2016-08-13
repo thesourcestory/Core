@@ -11,7 +11,7 @@ public class RenderItems {
     public static BlockAndItemHelper helper = new BlockAndItemHelper();
 
     public static void render(){
-        helper.renderItem(ModItems.test2, 0, new ModelResourceLocation("minecraf:iron_ingot", "inventory"));
+        helper.renderItem(ModItems.test2, 0, new ModelResourceLocation("pdoxcore:iron_ingot", "inventory"));
     }
 
 }

@@ -23,6 +23,7 @@ public class PdoxCore {
         ModBlocks.init();
         ModItems.init();
 
+        proxy.registerRenders();
     }
 
     @Mod.EventHandler
@@ -32,6 +33,5 @@ public class PdoxCore {
 
     @Mod.EventHandler
     public static void postInit(FMLPostInitializationEvent event){
-        proxy.registerRenders();
     }
 }

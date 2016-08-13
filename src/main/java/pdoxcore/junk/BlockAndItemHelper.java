@@ -1,6 +1,7 @@
 package pdoxcore.junk;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -23,8 +24,6 @@ public class BlockAndItemHelper {
      */
     public void renderBlock(Block block, int metadata, ModelResourceLocation location){
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), metadata, location);
-        ItemBlock itemBlock = new ItemBlock(block);
-        ModelLoader.setCustomModelResourceLocation(itemBlock, metadata, location);
     }
 
     /**
@@ -35,6 +34,7 @@ public class BlockAndItemHelper {
      * @param location the model you want
      */
     public void renderItem(Item item, int metadata, ModelResourceLocation location){
+        ModelBakery.registerItemVariants(item, location);
         ModelLoader.setCustomModelResourceLocation(item, metadata, location);
     }
 

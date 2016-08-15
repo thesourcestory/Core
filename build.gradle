@@ -218,7 +218,7 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
                     jsonString = '''{
     "parent":"block/cube_all",
     "textures":{
-        "all": "''' + archivesBaseName + ":blocks" + directoryPath + newFileName + '''"
+        "all": "''' + archivesBaseName + ":blocks/" + directoryPath + newFileName + '''"
     }
 }'''
                 }
@@ -229,7 +229,7 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
                     jsonString = '''{
     "parent":"block/cube_all",
     "textures":{
-        "all": "''' + archivesBaseName + ":blocks" + directoryPath + newFileName + '''"
+        "all": "''' + archivesBaseName + ":blocks/" + directoryPath + newFileName + '''"
     }
 }'''
                 }

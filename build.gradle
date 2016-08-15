@@ -93,6 +93,7 @@ def createBlockJSON() {
 
     createJSONsForTextures(textureDirectory, "", "block")
     createIBlockJSON()
+    createBStateJSON()
 }
 
 def createIBlockJSON() {
@@ -104,6 +105,16 @@ def createIBlockJSON() {
     File textureDirectory = new File("./src/main/resources/assets/" + archivesBaseName + "/textures/blocks")
 
     createJSONsForTextures(textureDirectory, "", "iblock")
+}
+
+def createBStateJSON() {
+    File modelDirectory = new File("./src/main/resources/assets/" + archivesBaseName + "/blockstate")
+    if(!modelDirectory.exists()) modelDirectory.mkdir()
+
+    File textureDirectory = new File("./src/main/resources/assets/" + archivesBaseName + "/textures/blocks")
+
+    createJSONsForTextures(textureDirectory, "", "state")
+
 }
 		
 def createItemJSON() {
@@ -137,6 +148,9 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
             }
             if(type == "iblock") {
                 newDirectoryPathFileString = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\models\\item\\" + newDirectoryPath
+            }
+            if(type == "state") {
+                newDirectoryPathFileString = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\blockstates\\" + newDirectoryPath
             }
             File newDirectoryPathFile = new File(newDirectoryPathFileString);
             if(!newDirectoryPathFile.exists()) {
@@ -186,6 +200,11 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
                         newFileName.toString() + ".json"
                 println(fileLocation)
             }
+            if(type == "state") {
+                fileLocation = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\blockstates\\" + directoryPath +
+                        newFileName.toString() + ".json"
+                println(fileLocation)
+            }
             File jsonFile = new File(fileLocation);
             if (!jsonFile.exists()) {
                 String jsonString
@@ -223,13 +242,22 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
 }'''
                 }
 
-                if(type == "iblock"){
+                if(type == "iblock") {
                     directoryPath = directoryPath.replace("\\", "/")
                     jsonFile.createNewFile();
                     jsonString = '''{
     "parent":"block/cube_all",
     "textures":{
         "all": "''' + archivesBaseName + ":blocks/" + directoryPath + newFileName + '''"
+    }
+}'''
+                }
+                if(type == "state") {
+                    directoryPath = directoryPath.replace("\\", "/")
+                    jsonFile.createNewFile();
+                    jsonString = '''{
+    "variants":{
+        "normal": { "model": "''' + archivesBaseName + directoryPath + newFileName + '''"
     }
 }'''
                 }

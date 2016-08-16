@@ -1,8 +1,5 @@
 package pdoxcore.proxy;
 
-import pdoxcore.blocks.RenderBlocks;
-import pdoxcore.items.RenderItems;
-
 /**
  * Created by magnus97 on 19/05/2016.
  */

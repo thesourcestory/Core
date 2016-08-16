@@ -1,7 +1,7 @@
 package pdoxcore.init;
 
 import net.minecraft.item.Item;
-import pdoxcore.interfaces.BlockAndItemHelper;
+import pdoxcore.test.BlockAndItemHelper;
 import pdoxcore.items.Debugger;
 
 /**

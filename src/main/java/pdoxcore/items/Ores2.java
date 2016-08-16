@@ -3,7 +3,7 @@ package pdoxcore.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import pdoxcore.interfaces.IMetaBlockName;
+import pdoxcore.test.IMetaBlockName;
 
 /**
  * Created by magnus97 on 15/08/2016.

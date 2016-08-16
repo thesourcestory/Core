@@ -10,7 +10,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import pdoxcore.init.PdoxCore;
-import pdoxcore.interfaces.IMetaBlockName;
+import pdoxcore.test.IMetaBlockName;
 
 import java.util.List;
 

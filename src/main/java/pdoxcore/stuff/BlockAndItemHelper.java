@@ -1,4 +1,4 @@
-package pdoxcore.test;
+package pdoxcore.stuff;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelBakery;

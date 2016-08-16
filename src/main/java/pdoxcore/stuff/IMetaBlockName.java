@@ -1,4 +1,4 @@
-package pdoxcore.test;
+package pdoxcore.stuff;
 
 import net.minecraft.item.ItemStack;
 

@@ -1,6 +1,6 @@
 package pdoxcore.proxy;
 
-import pdoxcore.test.BlockAndItemHelper;
+import pdoxcore.stuff.BlockAndItemHelper;
 
 /**
  * Created by magnus97 on 22/05/2016.

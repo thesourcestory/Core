@@ -11,7 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import pdoxcore.init.PdoxCore;
-import pdoxcore.test.IMetaBlockName;
+import pdoxcore.stuff.IMetaBlockName;
 
 import java.util.List;
 

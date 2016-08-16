@@ -6,7 +6,7 @@ import net.minecraft.block.material.Material;
 import pdoxcore.blocks.Ores;
 import pdoxcore.blocks.Ores1;
 import pdoxcore.blocks.Ores2;
-import pdoxcore.test.BlockAndItemHelper;
+import pdoxcore.stuff.BlockAndItemHelper;
 
 /**
  * Created by magnus97 on 19/05/2016.

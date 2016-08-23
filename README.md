@@ -1,2 +1,2 @@
 # Core
-The main core file for all off our mods
+This has all the ores and ingots for most of our mods

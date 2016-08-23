@@ -9,7 +9,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
- * Created by magnus97 on 28/06/2016.
+ * Created by WildWolf on 28/06/2016.
  */
 public class BlockAndItemHelper {
 

@@ -9,7 +9,7 @@ import pdoxcore.blocks.Ores2;
 import pdoxcore.stuff.BlockAndItemHelper;
 
 /**
- * Created by magnus97 on 19/05/2016.
+ * Created by WildWolf on 19/05/2016.
  */
 public class ModBlocks {
 

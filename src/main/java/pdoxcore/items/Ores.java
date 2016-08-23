@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import pdoxcore.stuff.IMetaBlockName;
 
 /**
- * Created by magnus97 on 16/08/2016.
+ * Created by WildWolf on 16/08/2016.
  */
 public class Ores extends ItemBlock {
 

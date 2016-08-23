@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import pdoxcore.proxy.CommonProxy;
 
 /**
- * Created by magnus97 on 19/05/2016.
+ * Created by WildWolf on 19/05/2016.
  */
 @Mod(modid = "pdoxcore", name = "PardadoxCore", version = "0.0.1")
 public class PdoxCore {

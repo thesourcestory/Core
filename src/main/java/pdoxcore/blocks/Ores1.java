@@ -15,7 +15,7 @@ import pdoxcore.stuff.IMetaBlockName;
 import java.util.List;
 
 /**
- * Created by magnus97 on 15/08/2016.
+ * Created by WildWolf on 15/08/2016.
  */
 public class Ores1 extends Block implements IMetaBlockName{
 

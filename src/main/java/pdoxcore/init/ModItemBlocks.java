@@ -7,7 +7,7 @@ import pdoxcore.items.Ores1;
 import pdoxcore.items.Ores2;
 
 /**
- * Created by magnus97 on 30/06/2016.
+ * Created by WildWolf on 30/06/2016.
  */
 public class ModItemBlocks extends ModBlocks{
 

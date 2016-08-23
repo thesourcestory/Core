@@ -11,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
- * Created by magnus97 on 16/08/2016.
+ * Created by WildWolf on 16/08/2016.
  */
 public class Debugger extends Item {
 

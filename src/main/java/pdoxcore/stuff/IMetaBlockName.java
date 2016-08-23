@@ -3,7 +3,7 @@ package pdoxcore.stuff;
 import net.minecraft.item.ItemStack;
 
 /**
- * Created by magnus97 on 15/08/2016.
+ * Created by WildWolf on 15/08/2016.
  */
 public interface IMetaBlockName {
 

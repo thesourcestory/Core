@@ -16,7 +16,7 @@ import pdoxcore.stuff.IMetaBlockName;
 import java.util.List;
 
 /**
- * Created by magnus97 on 15/08/2016.
+ * Created by WildWolf on 15/08/2016.
  */
 public class Ores extends Block implements IMetaBlockName{
 
@@ -29,10 +29,6 @@ public class Ores extends Block implements IMetaBlockName{
     }
 
     public static final PropertyEnum TYPE = PropertyEnum.create("type", OresTypes.class);
-
-    public static PropertyEnum getType(){
-        return TYPE;
-    }
 
     @Override
     protected BlockStateContainer createBlockState(){

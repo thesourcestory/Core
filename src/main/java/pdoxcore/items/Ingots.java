@@ -29,7 +29,7 @@ public class Ingots extends Item{
 
     @Override
     public void getSubItems(Item item, CreativeTabs tabs, List list){
-        for(int i = 0; i < 96; i++) {
+        for(int i = 0; i < 88; i++) {
             list.add(new ItemStack(item, 1, i));
         }
     }

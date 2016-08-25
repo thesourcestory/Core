@@ -1,10 +1,8 @@
 package pdoxcore.items;
 
-import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import pdoxcore.blocks.Ores;
 import pdoxcore.init.PdoxCore;
 
 import java.util.List;

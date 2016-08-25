@@ -7,8 +7,6 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
@@ -123,15 +121,48 @@ public class Ores extends Block implements IMetaBlockName{
     }
 
     public enum OreTypes implements IStringSerializable {
-        CHROMIUM(0,"chromium"),COPPER(1,"copper"),LEAD(2,"lead"),MANGANESE(3,"manganese"),NICKEL(4,"nickel"),
-        PLATINUM(5,"platinum"), SILVER(6,"silver"),TIN(7,"tin"),TITANIUM(8,"titanium"),ZINC(9,"zinc");
+        CHROMIUM(0,"chromium", 10, 5, 20),
+        COPPER(1,"copper", 8, 10, 5, 20),
+        LEAD(2,"lead", 6, 10, 5, 20),
+        MANGANESE(3,"manganese", 10, 5, 20),
+        NICKEL(4,"nickel", 7, 10, 5, 20),
+        PLATINUM(5,"platinum", 2, 10, 5, 20),
+        SILVER(6,"silver", 3, 10, 5, 20),
+        TIN(7,"tin", 8, 10, 5, 20),
+        TITANIUM(8,"titanium", 1, 10, 5, 20),
+        ZINC(9,"zinc", 5, 10, 5, 20);
 
+        private static final OreTypes[] META_LOOKUP = new OreTypes[values().length];
         private int ID;
         private String name;
+        private int genCount;
+        private int chance;
+        private int[] level = new int[2];
 
-        OreTypes(int ID, String name){
+        OreTypes(int id, String name, int chance, int minY, int maxY){
+            this.ID = id;
+            this.name = name;
+            this.genCount = 4;
+            this.chance = chance;
+            this.level[0] = minY;
+            this.level[1] = maxY;
+        }
+
+        OreTypes(int ID, String name, int genCount, int chance, int minY, int maxY){
             this.ID = ID;
             this.name = name;
+            this.genCount = genCount;
+            this.chance = chance;
+            this.level[0] = minY;
+            this.level[1] = maxY;
+        }
+
+        public int[] getLevel(){
+            return level;
+        }
+
+        public int getGenCount(){
+            return genCount;
         }
 
         @Override
@@ -146,20 +177,77 @@ public class Ores extends Block implements IMetaBlockName{
 
         public int getID() {
             return ID;
+        }
+
+        public static OreTypes byMetadata(int meta){
+            if (meta < 0 || meta >= META_LOOKUP.length)
+            {
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        static {
+            for(OreTypes enumOreChunk : values()){
+                META_LOOKUP[enumOreChunk.getID()] = enumOreChunk;
+            }
+        }
+
+        public int getChance() {
+            return chance;
         }
     }
 
     public enum Ore1Types implements IStringSerializable{
-        ACANTHITE(0, "acanthite"), BARITE(1, "barite"), BAUXITE(2, "bauxite"), BERYL(3, "beryl"), BORNITE(4, "bornite"), CASSITERITE(5, "cassiterite"), CHALCOCITE(6, "chalcocite"),
-        CHALCOPYRITE(7, "chalcopyrite"), CHROMITE(8, "chromite"), CINNABAR(9, "cinnabar"), COBALTITE(10, "cobaltite"), COLUMBITE(11, "columbite"), TANTALITE(12, "tantalite"),
-        DOLOMITE(13, "dolomite"), GALENA(14, "galena"), HEMATITE(15, "hematite");
+        ACANTHITE(0, "acanthite", 10, 5, 20),
+        BARITE(1, "barite", 10, 5, 20),
+        BAUXITE(2, "bauxite", 10, 10, 5, 20),
+        BERYL(3, "beryl", 10, 5, 20),
+        BORNITE(4, "bornite", 10, 5, 20),
+        CASSITERITE(5, "cassiterite", 10, 5, 20),
+        CHALCOCITE(6, "chalcocite", 10, 5, 20),
+        CHALCOPYRITE(7, "chalcopyrite", 10, 5, 20),
+        CHROMITE(8, "chromite", 10, 5, 20),
+        CINNABAR(9, "cinnabar", 10, 5, 20),
+        COBALTITE(10, "cobaltite", 10, 5, 20),
+        COLUMBITE(11, "columbite", 10, 5, 20),
+        TANTALITE(12, "tantalite", 10, 5, 20),
+        DOLOMITE(13, "dolomite", 10, 5, 20),
+        GALENA(14, "galena", 10, 5, 20),
+        HEMATITE(15, "hematite", 10, 5, 20);
 
+        private static final Ore1Types[] META_LOOKUP = new Ore1Types[values().length];
         private int ID;
         private String name;
+        private int genCount;
+        private int chance;
+        private int[] level = new int[2];
 
-        Ore1Types(int ID, String name){
+        Ore1Types(int id, String name, int chance, int minY, int maxY){
+            this.ID = id;
+            this.name = name;
+            this.genCount = 4;
+            this.chance = chance;
+            this.level[0] = minY;
+            this.level[1] = maxY;
+        }
+
+        Ore1Types(int ID, String name, int genCount, int chance, int minY, int maxY){
             this.ID = ID;
             this.name = name;
+            this.genCount = genCount;
+            this.chance = chance;
+            this.level[0] = minY;
+            this.level[1] = maxY;
+        }
+
+        public int[] getLevel(){
+            return level;
+        }
+
+        public int getGenCount(){
+            return genCount;
         }
 
         @Override
@@ -174,19 +262,68 @@ public class Ores extends Block implements IMetaBlockName{
 
         public int getID() {
             return ID;
+        }
+
+        public static Ore1Types byMetadata(int meta){
+            if (meta < 0 || meta >= META_LOOKUP.length)
+            {
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        static {
+            for(Ore1Types enumOreChunk : values()){
+                META_LOOKUP[enumOreChunk.getID()] = enumOreChunk;
+            }
         }
     }
 
     public enum Ore2Types implements IStringSerializable{
-        ILMENITE(0, "ilmenite"), MAGNETITE(1, "magnetite"), MALACHITE(2, "malachite"), MOLYBDENITE(3, "molybdenite"), PENTALANDITE(4, "pentalandite"), PYROLUSITE(5, "pyrolusite"),
-        SCHEELITE(6, "scheelite"), SPERRYLITE(7, "sperrylite"), PSHALERITE(8, "pshalerite"), URANINITE(9, "uraninite"), WOLFRAMITE(10, "wolframite");
+        ILMENITE(0, "ilmenite", 10, 5, 20),
+        MAGNETITE(1, "magnetite", 10, 5, 20),
+        MALACHITE(2, "malachite", 10, 5, 20),
+        MOLYBDENITE(3, "molybdenite", 10, 5, 20),
+        PENTALANDITE(4, "pentalandite", 10, 5, 20),
+        PYROLUSITE(5, "pyrolusite", 10, 5, 20),
+        SCHEELITE(6, "scheelite", 10, 5, 20),
+        SPERRYLITE(7, "sperrylite", 10, 5, 20),
+        PSHALERITE(8, "pshalerite", 10, 5, 20),
+        URANINITE(9, "uraninite", 10, 5, 20),
+        WOLFRAMITE(10, "wolframite", 10, 5, 20);
 
+        private static final Ore2Types[] META_LOOKUP = new Ore2Types[values().length];
         private int ID;
         private String name;
+        private int genCount;
+        private int chance;
+        private int[] level = new int[2];
 
-        Ore2Types(int ID, String name){
+        Ore2Types(int id, String name, int chance, int minY, int maxY){
+            this.ID = id;
+            this.name = name;
+            this.genCount = 4;
+            this.chance = chance;
+            this.level[0] = minY;
+            this.level[1] = maxY;
+        }
+
+        Ore2Types(int ID, String name, int genCount, int chance, int minY, int maxY){
             this.ID = ID;
             this.name = name;
+            this.genCount = genCount;
+            this.chance = chance;
+            this.level[0] = minY;
+            this.level[1] = maxY;
+        }
+
+        public int[] getLevel(){
+            return level;
+        }
+
+        public int getGenCount(){
+            return genCount;
         }
 
         @Override
@@ -201,6 +338,21 @@ public class Ores extends Block implements IMetaBlockName{
 
         public int getID() {
             return ID;
+        }
+
+        public static Ore2Types byMetadata(int meta){
+            if (meta < 0 || meta >= META_LOOKUP.length)
+            {
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        static {
+            for(Ore2Types enumOreChunk : values()){
+                META_LOOKUP[enumOreChunk.getID()] = enumOreChunk;
+            }
         }
     }
 }

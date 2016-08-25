@@ -1,6 +1,8 @@
 package pdoxcore.init;
 
 import net.minecraft.item.Item;
+import pdoxcore.items.Ingots;
+import pdoxcore.items.OreChunk;
 import pdoxcore.stuff.BlockAndItemHelper;
 import pdoxcore.items.Debugger;
 
@@ -11,10 +13,13 @@ public class ModItems {
 
     public static BlockAndItemHelper helper = new BlockAndItemHelper();
 
-    public static Item debugger = new Debugger();
+    public static Item ingots = new Ingots();
+    public static Item orechunk = new OreChunk();
 
     public static void init(){
-        helper.registerItem(debugger, "debugger");
+        helper.registerItem(new Debugger(), "debugger");
+        helper.registerItem(ingots, "ingots");
+        helper.registerItem(orechunk, "orechunk");
     }
 
 }

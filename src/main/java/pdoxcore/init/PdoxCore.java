@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import pdoxcore.items.Ores;
 import pdoxcore.proxy.CommonProxy;
 
 /**
@@ -19,20 +20,29 @@ public class PdoxCore {
     @SidedProxy(clientSide = "pdoxcore.proxy.ClientProxy",serverSide = "pdoxcore.proxy.CommonProxy")
     public static CommonProxy proxy;
 
-    public static final CreativeTabs pdoxcore = new CreativeTabs("pdoxcore") {
+    public static final CreativeTabs pdoxcoreores = new CreativeTabs("pdoxcoreores") {
         @Override
         public Item getTabIconItem() {
-            return Items.IRON_INGOT;
+            return Item.getItemFromBlock(ModBlocks.ores);
+        }
+    };
+
+    public static final CreativeTabs pdoxcoreelements = new CreativeTabs("pdoxcoreelements") {
+        @Override
+        public Item getTabIconItem() {
+            return ModItems.ingots;
         }
     };
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
+        System.out.println("Pre Init of PdoxCore");
         ModBlocks.init();
         ModItems.init();
 
         proxy.registerRenders();
-    }
+        System.out.println("Pre Init Of PdoxCore is done");
+}
 
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event){

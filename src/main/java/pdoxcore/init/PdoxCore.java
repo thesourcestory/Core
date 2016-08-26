@@ -8,8 +8,10 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import pdoxcore.items.Ores;
 import pdoxcore.proxy.CommonProxy;
+import pdoxcore.world.OreGen;
 
 /**
  * Created by WildWolf on 19/05/2016.
@@ -46,7 +48,7 @@ public class PdoxCore {
 
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event){
-
+        GameRegistry.registerWorldGenerator(new OreGen(), 0);
     }
 
     @Mod.EventHandler

@@ -77,6 +77,7 @@ public class Ores extends Block implements IMetaBlockName{
         return ModItems.orechunk;
     }
 
+    @Override
     public int quantityDropped(Random random)
     {
         return 1 + random.nextInt(4);
@@ -122,13 +123,13 @@ public class Ores extends Block implements IMetaBlockName{
 
     public enum OreTypes implements IStringSerializable {
         CHROMIUM(0,"chromium", 10, 5, 20),
-        COPPER(1,"copper", 8, 10, 5, 20),
-        LEAD(2,"lead", 6, 10, 5, 20),
+        COPPER(1,"copper", 8, 5, 30, 55),
+        LEAD(2,"lead", 6, 5, 5, 25),
         MANGANESE(3,"manganese", 10, 5, 20),
         NICKEL(4,"nickel", 7, 10, 5, 20),
         PLATINUM(5,"platinum", 2, 10, 5, 20),
-        SILVER(6,"silver", 3, 10, 5, 20),
-        TIN(7,"tin", 8, 10, 5, 20),
+        SILVER(6,"silver", 5, 5, 5, 20),
+        TIN(7,"tin", 5, 5, 20, 40),
         TITANIUM(8,"titanium", 1, 10, 5, 20),
         ZINC(9,"zinc", 5, 10, 5, 20);
 

@@ -15,9 +15,10 @@ public class ModItems {
 
     public static Item ingots = new Ingots();
     public static Item orechunk = new OreChunk();
+    public static Item debugger = new Debugger();
 
     public static void init(){
-        helper.registerItem(new Debugger(), "debugger");
+        helper.registerItem(debugger, "debugger");
         helper.registerItem(ingots, "ingots");
         helper.registerItem(orechunk, "orechunk");
     }

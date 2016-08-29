@@ -3,6 +3,7 @@ package pdoxcore.init;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -39,6 +40,7 @@ public class PdoxCore {
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
         System.out.println("Pre Init of PdoxCore");
+        Configuration configuration = new Configuration();
         ModBlocks.init();
         ModItems.init();
 

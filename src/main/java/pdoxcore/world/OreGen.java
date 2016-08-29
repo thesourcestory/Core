@@ -17,9 +17,9 @@ import java.util.Random;
  */
 public class OreGen implements IWorldGenerator {
 
-    private WorldGenerator[] ores;
-    private static int[] chance;
-    private static int[][] level;
+    private WorldGenerator[] ores = new WorldGenerator[Ores.OreTypes.values().length + Ores.Ore1Types.values().length + Ores.Ore2Types.values().length];
+    private static int[] chance = new int[Ores.OreTypes.values().length + Ores.Ore1Types.values().length + Ores.Ore2Types.values().length];
+    private static int[][] level = new int[Ores.OreTypes.values().length + Ores.Ore1Types.values().length + Ores.Ore2Types.values().length][2];
 
     public OreGen(){
         for(int i = 0; i < Ores.OreTypes.values().length; i++){

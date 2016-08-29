@@ -25,7 +25,7 @@ group= "pdoxcore"
 archivesBaseName = "pdoxcore"
 
 minecraft {
-    version = "1.10.2-12.18.1.2045"
+    version = "1.10.2-12.18.1.2075"
     runDir = "run"
 
     // the mappings can be changed at any time, and must be in the following format.
@@ -201,12 +201,13 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
                 println(fileLocation)
             }
             if(type == "state") {
-                fileLocation = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\blockstates\\" + directoryPath +
+                fileLocation = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\blockstate\\" + directoryPath +
                         newFileName.toString() + ".json"
                 println(fileLocation)
             }
             File jsonFile = new File(fileLocation);
             if (!jsonFile.exists()) {
+                println("Making: " + jsonFile)
                 String jsonString
                 if(type == "item") {
                     directoryPath = directoryPath.replace("\\", "/")
@@ -257,7 +258,7 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
                     jsonFile.createNewFile();
                     jsonString = '''{
     "variants":{
-        "normal": { "model": "''' + archivesBaseName + directoryPath + newFileName + '''"
+        "normal": { "model": "''' + archivesBaseName + directoryPath + newFileName + '''" }
     }
 }'''
                 }

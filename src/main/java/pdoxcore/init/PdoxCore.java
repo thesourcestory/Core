@@ -26,7 +26,7 @@ public class PdoxCore {
     public static final CreativeTabs pdoxcoreores = new CreativeTabs("pdoxcoreores") {
         @Override
         public Item getTabIconItem() {
-            return Item.getItemFromBlock(ModBlocks.ores);
+            return Item.getItemFromBlock(ModBlocks.ores[1]);
         }
     };
 
@@ -39,13 +39,10 @@ public class PdoxCore {
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
-        System.out.println("Pre Init of PdoxCore");
-        Configuration configuration = new Configuration();
         ModBlocks.init();
         ModItems.init();
 
         proxy.registerRenders();
-        System.out.println("Pre Init Of PdoxCore is done");
 }
 
     @Mod.EventHandler

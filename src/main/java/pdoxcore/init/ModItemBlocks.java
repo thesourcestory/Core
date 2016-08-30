@@ -11,14 +11,18 @@ import pdoxcore.items.Ores2;
  */
 public class ModItemBlocks extends ModBlocks{
 
-    public static ItemBlock ores1 = new Ores1(ModBlocks.ores1);
-    public static ItemBlock ores2 = new Ores2(ModBlocks.ores2);
-    public static ItemBlock ores = new Ores(ModBlocks.ores);
+    public static ItemBlock[] ores = new ItemBlock[ModBlocks.ores.length];
+
+    static {
+        for(int i = 0; i<=ores.length; i++){
+            ores[i] = new ItemBlock(ModBlocks.ores[i]);
+        }
+    }
 
     public static void init(){
-        helper.registerIBlock(ores, "ores");
-        helper.registerIBlock(ores1, "ores1");
-        helper.registerIBlock(ores2, "ores2");
+        for(int i = 0; i<=ores.length; i++){
+            helper.registerIBlock(ores[i], ores[i].getUnlocalizedName().substring(5));
+        }
     }
 
 }

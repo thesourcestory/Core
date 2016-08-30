@@ -41,7 +41,7 @@ public class Debugger extends Item {
                         BlockPos blockPos = new BlockPos(x,y,z);
                         IBlockState old = worldIn.getBlockState(blockPos);
                         IBlockState air = Blocks.AIR.getDefaultState();
-                        IBlockState ore = ModBlocks.ores.getDefaultState().withProperty(Ores.TYPE, Ores.OreTypes.TIN);
+                        IBlockState ore = ModBlocks.ores[7].getDefaultState();
                         if(worldIn.getBlockState(blockPos) != ore && worldIn.getBlockState(blockPos) != air) {
                             worldIn.setBlockState(blockPos, air, 2);
                             worldIn.notifyBlockUpdate(blockPos, old, air, 2);

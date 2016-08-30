@@ -22,7 +22,7 @@ import java.util.Random;
 /**
  * Created by WildWolf on 15/08/2016.
  */
-public class Ores extends Block implements IMetaBlockName{
+public class Ores extends Block implements IMetaBlockName {
 
     public Ores(Material blockMaterialIn, float hardness, float resistance) {
         super(blockMaterialIn);
@@ -36,38 +36,17 @@ public class Ores extends Block implements IMetaBlockName{
     public static final PropertyEnum TYPE = PropertyEnum.create("type", OreTypes.class);
 
     @Override
-    protected BlockStateContainer createBlockState(){
-        return new BlockStateContainer(this, TYPE);
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[]{TYPE});
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta){
-        switch (meta){
-            case 1:
-                return getDefaultState().withProperty(TYPE, OreTypes.COPPER);
-            case 2:
-                return getDefaultState().withProperty(TYPE, OreTypes.LEAD);
-            case 3:
-                return getDefaultState().withProperty(TYPE, OreTypes.MANGANESE);
-            case 4:
-                return getDefaultState().withProperty(TYPE, OreTypes.NICKEL);
-            case 5:
-                return getDefaultState().withProperty(TYPE, OreTypes.PLATINUM);
-            case 6:
-                return getDefaultState().withProperty(TYPE, OreTypes.SILVER);
-            case 7:
-                return getDefaultState().withProperty(TYPE, OreTypes.TIN);
-            case 8:
-                return getDefaultState().withProperty(TYPE, OreTypes.TITANIUM);
-            case 9:
-                return getDefaultState().withProperty(TYPE, OreTypes.ZINC);
-            default:
-                return getDefaultState().withProperty(TYPE, OreTypes.CHROMIUM);
-        }
+    public IBlockState getStateFromMeta(int meta) {
+        return getDefaultState().withProperty(TYPE, OreTypes.values()[meta]);
     }
 
     @Override
-    public int getMetaFromState(IBlockState state){
+    public int getMetaFromState(IBlockState state) {
         OreTypes type = (OreTypes) state.getValue(TYPE);
         return type.getID();
     }
@@ -78,60 +57,38 @@ public class Ores extends Block implements IMetaBlockName{
     }
 
     @Override
-    public int quantityDropped(Random random)
-    {
+    public int quantityDropped(Random random) {
         return 1 + random.nextInt(4);
     }
 
     @Override
-    public int damageDropped(IBlockState state){
+    public int damageDropped(IBlockState state) {
         return EnumOreChunk.byMetadata(getMetaFromState(state)).getMeta();
     }
 
     @Override
-    public void getSubBlocks(Item item, CreativeTabs creativeTabs, List list){
-        for(int i = 0; i < TYPE.getAllowedValues().toArray().length; i++){
+    public void getSubBlocks(Item item, CreativeTabs creativeTabs, List list) {
+        for (int i = 0; i < TYPE.getAllowedValues().toArray().length; i++) {
             list.add(new ItemStack(item, 1, i));
         }
     }
 
     @Override
     public String getSpecialName(ItemStack stack) {
-        switch (stack.getItemDamage()){
-            case 1:
-                return OreTypes.COPPER.getName();
-            case 2:
-                return OreTypes.LEAD.getName();
-            case 3:
-                return OreTypes.MANGANESE.getName();
-            case 4:
-                return OreTypes.NICKEL.getName();
-            case 5:
-                return OreTypes.PLATINUM.getName();
-            case 6:
-                return OreTypes.SILVER.getName();
-            case 7:
-                return OreTypes.TIN.getName();
-            case 8:
-                return OreTypes.TITANIUM.getName();
-            case 9:
-                return OreTypes.ZINC.getName();
-            default:
-                return OreTypes.CHROMIUM.getName();
-        }
+        return OreTypes.values()[stack.getItemDamage()].getName();
     }
 
     public enum OreTypes implements IStringSerializable {
-        CHROMIUM(0,"chromium", 10, 5, 20),
-        COPPER(1,"copper", 8, 5, 30, 55),
-        LEAD(2,"lead", 6, 5, 5, 25),
-        MANGANESE(3,"manganese", 10, 5, 20),
-        NICKEL(4,"nickel", 7, 10, 5, 20),
-        PLATINUM(5,"platinum", 2, 10, 5, 20),
-        SILVER(6,"silver", 5, 5, 5, 20),
-        TIN(7,"tin", 5, 5, 20, 40),
-        TITANIUM(8,"titanium", 1, 10, 5, 20),
-        ZINC(9,"zinc", 5, 10, 5, 20);
+        CHROMIUM(0, "chromium", 10, 5, 20),
+        COPPER(1, "copper", 8, 5, 30, 55),
+        LEAD(2, "lead", 6, 5, 5, 25),
+        MANGANESE(3, "manganese", 10, 5, 20),
+        NICKEL(4, "nickel", 7, 10, 5, 20),
+        PLATINUM(5, "platinum", 2, 10, 5, 20),
+        SILVER(6, "silver", 5, 5, 5, 20),
+        TIN(7, "tin", 5, 5, 20, 40),
+        TITANIUM(8, "titanium", 1, 10, 5, 20),
+        ZINC(9, "zinc", 5, 10, 5, 20);
 
         private static final OreTypes[] META_LOOKUP = new OreTypes[values().length];
         private int ID;
@@ -140,7 +97,7 @@ public class Ores extends Block implements IMetaBlockName{
         private int chance;
         private int[] level = new int[2];
 
-        OreTypes(int id, String name, int chance, int minY, int maxY){
+        OreTypes(int id, String name, int chance, int minY, int maxY) {
             this.ID = id;
             this.name = name;
             this.genCount = 4;
@@ -149,7 +106,7 @@ public class Ores extends Block implements IMetaBlockName{
             this.level[1] = maxY;
         }
 
-        OreTypes(int ID, String name, int genCount, int chance, int minY, int maxY){
+        OreTypes(int ID, String name, int genCount, int chance, int minY, int maxY) {
             this.ID = ID;
             this.name = name;
             this.genCount = genCount;
@@ -158,16 +115,16 @@ public class Ores extends Block implements IMetaBlockName{
             this.level[1] = maxY;
         }
 
-        public int[] getLevel(){
+        public int[] getLevel() {
             return level;
         }
 
-        public int getGenCount(){
+        public int getGenCount() {
             return genCount;
         }
 
         @Override
-        public String toString(){
+        public String toString() {
             return getName();
         }
 
@@ -180,9 +137,8 @@ public class Ores extends Block implements IMetaBlockName{
             return ID;
         }
 
-        public static OreTypes byMetadata(int meta){
-            if (meta < 0 || meta >= META_LOOKUP.length)
-            {
+        public static OreTypes byMetadata(int meta) {
+            if (meta < 0 || meta >= META_LOOKUP.length) {
                 meta = 0;
             }
 
@@ -190,7 +146,7 @@ public class Ores extends Block implements IMetaBlockName{
         }
 
         static {
-            for(OreTypes enumOreChunk : values()){
+            for (OreTypes enumOreChunk : values()) {
                 META_LOOKUP[enumOreChunk.getID()] = enumOreChunk;
             }
         }
@@ -200,7 +156,7 @@ public class Ores extends Block implements IMetaBlockName{
         }
     }
 
-    public enum Ore1Types implements IStringSerializable{
+    public enum Ore1Types implements IStringSerializable {
         ACANTHITE(0, "acanthite", 10, 5, 20),
         BARITE(1, "barite", 10, 5, 20),
         BAUXITE(2, "bauxite", 10, 10, 5, 20),
@@ -225,7 +181,7 @@ public class Ores extends Block implements IMetaBlockName{
         private int chance;
         private int[] level = new int[2];
 
-        Ore1Types(int id, String name, int chance, int minY, int maxY){
+        Ore1Types(int id, String name, int chance, int minY, int maxY) {
             this.ID = id;
             this.name = name;
             this.genCount = 4;
@@ -234,7 +190,7 @@ public class Ores extends Block implements IMetaBlockName{
             this.level[1] = maxY;
         }
 
-        Ore1Types(int ID, String name, int genCount, int chance, int minY, int maxY){
+        Ore1Types(int ID, String name, int genCount, int chance, int minY, int maxY) {
             this.ID = ID;
             this.name = name;
             this.genCount = genCount;
@@ -243,16 +199,16 @@ public class Ores extends Block implements IMetaBlockName{
             this.level[1] = maxY;
         }
 
-        public int[] getLevel(){
+        public int[] getLevel() {
             return level;
         }
 
-        public int getGenCount(){
+        public int getGenCount() {
             return genCount;
         }
 
         @Override
-        public String toString(){
+        public String toString() {
             return getName();
         }
 
@@ -265,9 +221,8 @@ public class Ores extends Block implements IMetaBlockName{
             return ID;
         }
 
-        public static Ore1Types byMetadata(int meta){
-            if (meta < 0 || meta >= META_LOOKUP.length)
-            {
+        public static Ore1Types byMetadata(int meta) {
+            if (meta < 0 || meta >= META_LOOKUP.length) {
                 meta = 0;
             }
 
@@ -275,13 +230,13 @@ public class Ores extends Block implements IMetaBlockName{
         }
 
         static {
-            for(Ore1Types enumOreChunk : values()){
+            for (Ore1Types enumOreChunk : values()) {
                 META_LOOKUP[enumOreChunk.getID()] = enumOreChunk;
             }
         }
     }
 
-    public enum Ore2Types implements IStringSerializable{
+    public enum Ore2Types implements IStringSerializable {
         ILMENITE(0, "ilmenite", 10, 5, 20),
         MAGNETITE(1, "magnetite", 10, 5, 20),
         MALACHITE(2, "malachite", 10, 5, 20),
@@ -301,7 +256,7 @@ public class Ores extends Block implements IMetaBlockName{
         private int chance;
         private int[] level = new int[2];
 
-        Ore2Types(int id, String name, int chance, int minY, int maxY){
+        Ore2Types(int id, String name, int chance, int minY, int maxY) {
             this.ID = id;
             this.name = name;
             this.genCount = 4;
@@ -310,7 +265,7 @@ public class Ores extends Block implements IMetaBlockName{
             this.level[1] = maxY;
         }
 
-        Ore2Types(int ID, String name, int genCount, int chance, int minY, int maxY){
+        Ore2Types(int ID, String name, int genCount, int chance, int minY, int maxY) {
             this.ID = ID;
             this.name = name;
             this.genCount = genCount;
@@ -319,16 +274,16 @@ public class Ores extends Block implements IMetaBlockName{
             this.level[1] = maxY;
         }
 
-        public int[] getLevel(){
+        public int[] getLevel() {
             return level;
         }
 
-        public int getGenCount(){
+        public int getGenCount() {
             return genCount;
         }
 
         @Override
-        public String toString(){
+        public String toString() {
             return getName();
         }
 
@@ -341,9 +296,8 @@ public class Ores extends Block implements IMetaBlockName{
             return ID;
         }
 
-        public static Ore2Types byMetadata(int meta){
-            if (meta < 0 || meta >= META_LOOKUP.length)
-            {
+        public static Ore2Types byMetadata(int meta) {
+            if (meta < 0 || meta >= META_LOOKUP.length) {
                 meta = 0;
             }
 
@@ -351,7 +305,7 @@ public class Ores extends Block implements IMetaBlockName{
         }
 
         static {
-            for(Ore2Types enumOreChunk : values()){
+            for (Ore2Types enumOreChunk : values()) {
                 META_LOOKUP[enumOreChunk.getID()] = enumOreChunk;
             }
         }

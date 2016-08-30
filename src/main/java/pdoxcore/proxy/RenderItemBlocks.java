@@ -14,7 +14,7 @@ public class RenderItemBlocks{
 
     public static void render(){
 
-        helper.renderItem(ModItemBlocks.ores, 1, new ModelResourceLocation("pdoxcore:ores/copper", "inventory"));
+        helper.renderItem(ModItemBlocks.ores[1], 0, new ModelResourceLocation("pdoxcore:ores/copper", "inventory"));
 
     }
 

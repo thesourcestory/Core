@@ -28,10 +28,6 @@ public class BlockAndItemHelper {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), metadata, location);
     }
 
-    public void renderBlockv2(Block block, int metadata, ModelResourceLocation location){
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), metadata, location);
-    }
-
     /**
      * for rendering items
      *
@@ -53,6 +49,15 @@ public class BlockAndItemHelper {
     public void registerBlock(Block block, String name){
         block.setRegistryName(name);
         block.setUnlocalizedName(name);
+        GameRegistry.register(block);
+    }
+
+    /**
+     * for registering blocks that has a registry name
+     *
+     * @param block the block that you want registered
+     */
+    public void registerBlock(Block block){
         GameRegistry.register(block);
     }
 

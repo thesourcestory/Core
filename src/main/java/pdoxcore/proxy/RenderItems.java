@@ -1,6 +1,7 @@
 package pdoxcore.proxy;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraftforge.fml.common.Mod;
 import pdoxcore.init.ModItems;
 import pdoxcore.stuff.BlockAndItemHelper;
 
@@ -14,6 +15,7 @@ public class RenderItems{
     public static void render(){
         helper.renderItem(ModItems.ingots, 19, new ModelResourceLocation("pdoxcore:ingots/copper", "inventory"));
         helper.renderItem(ModItems.debugger, 0, new ModelResourceLocation("pdoxcore:debugger", "inventory"));
+        helper.renderItem(ModItems.orechunk, 1, new ModelResourceLocation("pdoxcore:chunks/copper", "inventory"));
     }
 
 }

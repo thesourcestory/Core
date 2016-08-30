@@ -37,7 +37,7 @@ public class Ores extends Block implements IMetaBlockName{
 
     @Override
     protected BlockStateContainer createBlockState(){
-        return new BlockStateContainer(this, new IProperty[] { TYPE });
+        return new BlockStateContainer(this, TYPE);
     }
 
     @Override

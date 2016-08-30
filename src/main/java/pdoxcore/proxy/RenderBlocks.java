@@ -1,8 +1,6 @@
 package pdoxcore.proxy;
 
-import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
 import pdoxcore.init.ModBlocks;
 import pdoxcore.stuff.BlockAndItemHelper;
 
@@ -15,7 +13,8 @@ public class RenderBlocks{
 
     public static void render() {
 
-        ModelBakery.registerItemVariants(Item.getItemFromBlock(ModBlocks.ores), new ModelResourceLocation("pdoxcore:ores", "inventory"), new ModelResourceLocation("pdoxcore:ores/copper", "inventory"));
+        ModelResourceLocation test = new ModelResourceLocation("pdoxcore:ores/copper", "inventory");
+        System.out.println(test);
 
         helper.renderBlock(ModBlocks.ores, 1, new ModelResourceLocation("pdoxcore:ores/copper", "inventory"));
 

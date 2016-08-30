@@ -1,6 +1,7 @@
 package pdoxcore.stuff;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -23,7 +24,12 @@ public class BlockAndItemHelper {
      * @param location the model you want
      */
     public void renderBlock(Block block, int metadata, ModelResourceLocation location){
+        ModelBakery.registerItemVariants(Item.getItemFromBlock(block), location);
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), metadata, location);
+    }
+
+    public void renderBlockv2(Block block, int metadata, ModelResourceLocation location){
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), metadata, location);
     }
 
     /**

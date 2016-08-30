@@ -1,5 +1,8 @@
 {
   "forge_marker": 1,
+  "default": {
+    "model":"pdoxcore:ores/copper"
+  },
   "variants": {
     "type": {
       "copper": {

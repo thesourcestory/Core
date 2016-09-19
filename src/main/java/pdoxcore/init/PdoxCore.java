@@ -2,6 +2,7 @@ package pdoxcore.init;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
@@ -11,6 +12,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import pdoxcore.proxy.CommonProxy;
 import pdoxcore.world.OreGen;
 
@@ -33,7 +35,7 @@ public class PdoxCore {
     public static final CreativeTabs pdoxcoreelements = new CreativeTabs("pdoxcoreelements") {
         @Override
         public Item getTabIconItem() {
-            return Item.getItemById(ModItems.ingots.getDamage(new ItemStack(ModItems.ingots, 1, 19)));
+            return ModItems.ingots;
         }
     };
 

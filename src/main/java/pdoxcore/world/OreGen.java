@@ -8,7 +8,6 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import pdoxcore.blocks.BlockOre;
-import pdoxcore.blocks.Ores;
 import pdoxcore.init.ModBlocks;
 
 import java.util.Random;
@@ -24,7 +23,7 @@ public class OreGen implements IWorldGenerator {
 
     public OreGen() {
         for (int i = 0; i < 36; i++) {
-            this.ores[i] = new WorldGenMinable(BlockOre.getBlocks()[i].getDefaultState(), BlockOre.getCount()[i]);
+            this.ores[i] = new WorldGenMinable(ModBlocks.ores[i].getDefaultState(), BlockOre.getCount()[i]);
         }
         this.chance = BlockOre.getChance();
         this.level = BlockOre.getLevel();

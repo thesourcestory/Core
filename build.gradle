@@ -258,7 +258,7 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
                     jsonFile.createNewFile();
                     jsonString = '''{
     "variants":{
-        "normal": { "model": "''' + archivesBaseName + directoryPath + newFileName + '''" }
+        "normal": { "model": "''' + archivesBaseName + ":" + directoryPath + newFileName + '''" }
     }
 }'''
                 }

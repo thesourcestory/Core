@@ -4,7 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
+import pdoxcore.init.ModBlocks;
 import pdoxcore.init.ModItems;
+import pdoxcore.init.PdoxCore;
 import pdoxcore.items.EnumOreChunk;
 
 import java.util.Random;
@@ -17,7 +19,6 @@ public class BlockOre extends Block {
     private static int[] chance = new int[EnumOres.values().length];
     private static int[] count = new int[EnumOres.values().length];
     private static int[][] lvl = new int[EnumOres.values().length][2];
-    private static Block[] blocks = new Block[EnumOres.values().length];
     private static int[] metadrop = new int[EnumOres.values().length];
 
     /***
@@ -39,7 +40,7 @@ public class BlockOre extends Block {
         this.setHarvestLevel("pickaxe", lvl);
         this.setUnlocalizedName("ores." + name);
         this.setRegistryName(name);
-        this.blocks[where] = this;
+        this.setCreativeTab(PdoxCore.pdoxcoreores);
     }
 
     /***
@@ -61,7 +62,7 @@ public class BlockOre extends Block {
         this.setHarvestLevel("pickaxe", lvl);
         this.setUnlocalizedName("ores." + name);
         this.setRegistryName(name);
-        this.blocks[where] = this;
+        this.setCreativeTab(PdoxCore.pdoxcoreores);
     }
 
     public static int[] getChance() {
@@ -74,10 +75,6 @@ public class BlockOre extends Block {
 
     public static int[][] getLevel() {
         return lvl;
-    }
-
-    public static Block[] getBlocks() {
-        return blocks;
     }
 
     @Override
@@ -93,8 +90,8 @@ public class BlockOre extends Block {
     @Override
     public int damageDropped(IBlockState state) {
         int meta = 0;
-        for (int i = 0; i <= blocks.length; i++) {
-            if (state.getBlock() == blocks[i]) {
+        for (int i = 0; i <= ModBlocks.ores.length; i++) {
+            if (state.getBlock() == ModBlocks.ores[i]) {
                 meta = metadrop[i];
             }
         }

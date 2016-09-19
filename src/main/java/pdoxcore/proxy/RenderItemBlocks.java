@@ -14,7 +14,9 @@ public class RenderItemBlocks{
 
     public static void render(){
 
-        helper.renderItem(ModItemBlocks.ores[1], 0, new ModelResourceLocation("pdoxcore:ores/copper", "inventory"));
+        for(int i = 0; i < ModItemBlocks.ores.length; i++) {
+            helper.renderItem(ModItemBlocks.ores[i], 0, new ModelResourceLocation("pdoxcore:" + ModItemBlocks.ores[i].getUnlocalizedName().substring(5).replace(".","/"), "inventory"));
+        }
 
     }
 

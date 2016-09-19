@@ -1,7 +1,0 @@
-{
-  "variants": {
-    "type=copper": {
-        "model":"pdoxcore:ores/copper"
-    }
-  }
-}

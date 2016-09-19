@@ -19,34 +19,72 @@ public class BlockAndItemHelper {
     /**
      * for rendering blocks
      *
-     * @param block the block that you want rendered
+     * @param block    the block that you want rendered
      * @param metadata metadata of the block if it has one else set 0
      * @param location the model you want
      */
-    public void renderBlock(Block block, int metadata, ModelResourceLocation location){
+    public void renderBlock(Block block, int metadata, ModelResourceLocation location) {
         ModelBakery.registerItemVariants(Item.getItemFromBlock(block), location);
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), metadata, location);
     }
 
     /**
+     * for rendering blocks without special resourcelocation
+     *
+     * @param block    the block that you want rendered
+     * @param metadata metadata of the block if it has one else set 0
+     */
+    public void renderBlock(Block block, int metadata) {
+        renderBlock(block, metadata, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+    }
+
+    /**
+     * for rendering blocks without special resourcelocation and metadata
+     *
+     * @param block the block that you want rendered
+     */
+    public void renderBlock(Block block) {
+        renderBlock(block, 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+    }
+
+    /**
      * for rendering items
      *
-     * @param item the item that you want rendered
+     * @param item     the item that you want rendered
      * @param metadata metadata of the block if it has one else set 0
      * @param location the model you want
      */
-    public void renderItem(Item item, int metadata, ModelResourceLocation location){
+    public void renderItem(Item item, int metadata, ModelResourceLocation location) {
         ModelBakery.registerItemVariants(item, location);
         ModelLoader.setCustomModelResourceLocation(item, metadata, location);
+    }
+
+    /**
+     * for rendering items without special resourcelocation
+     *
+     * @param item     the item that you want rendered
+     * @param metadata metadata of the block if it has one else set 0
+     */
+    public void renderItem(Item item, int metadata) {
+        renderItem(item, metadata, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+    }
+
+    /**
+     * for rendering items without special resourcelocation and metadata
+     *
+     * @param item the item that you want rendered
+     */
+    public void renderItem(Item item) {
+        renderItem(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }
 
     /**
      * for registering blocks
      *
      * @param block the block that you want registered
-     * @param name the unlocalized and registry name for the block
+     * @param name  the unlocalized and registry name for the block
      */
-    public void registerBlock(Block block, String name){
+    public void registerBlock(Block block, String name) {
         block.setRegistryName(name);
         block.setUnlocalizedName(name);
         GameRegistry.register(block);
@@ -57,11 +95,11 @@ public class BlockAndItemHelper {
      *
      * @param block the block that you want registered
      */
-    public void registerBlock(Block block){
+    public void registerBlock(Block block) {
         GameRegistry.register(block);
     }
 
-    public void registerIBlock(ItemBlock itemBlock, String name){
+    public void registerIBlock(ItemBlock itemBlock, String name) {
         itemBlock.setRegistryName(name);
         itemBlock.setUnlocalizedName(name);
         GameRegistry.register(itemBlock);
@@ -73,7 +111,7 @@ public class BlockAndItemHelper {
      * @param item the item that you want registered
      * @param name the unlocalized and registry name for the block
      */
-    public void registerItem(Item item, String name){
+    public void registerItem(Item item, String name) {
         item.setUnlocalizedName(name);
         item.setRegistryName(name);
         GameRegistry.register(item);

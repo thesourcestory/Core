@@ -1,6 +1,5 @@
 package pdoxcore.proxy;
 
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import pdoxcore.init.ModBlocks;
 import pdoxcore.stuff.BlockAndItemHelper;
 
@@ -13,7 +12,9 @@ public class RenderBlocks {
 
     public static void render() {
 
-        helper.renderBlock(ModBlocks.ores[1], 0, new ModelResourceLocation("pdoxcore:copper", "inventory"));
+        for(int i = 0; i < ModBlocks.ores.length; i++) {
+            helper.renderBlock(ModBlocks.ores[i]);
+        }
 
         RenderItemBlocks.render();
     }

@@ -14,15 +14,17 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import pdoxcore.proxy.CommonProxy;
+import pdoxcore.util.ModLogger;
+import pdoxcore.util.References;
 import pdoxcore.world.OreGen;
 
 /**
  * Created by WildWolf on 19/05/2016.
  */
-@Mod(modid = "pdoxcore", name = "PardadoxCore", version = "0.0.1")
+@Mod(modid = References.Mod.MODID, name = References.Mod.NAME, version = References.Mod.VER)
 public class PdoxCore {
 
-    @SidedProxy(clientSide = "pdoxcore.proxy.ClientProxy",serverSide = "pdoxcore.proxy.CommonProxy")
+    @SidedProxy(clientSide = References.Mod.CPROXY,serverSide = References.Mod.SPROXY)
     public static CommonProxy proxy;
 
     public static final CreativeTabs pdoxcoreores = new CreativeTabs("pdoxcoreores") {

@@ -10,12 +10,17 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.common.network.ForgeMessage;
 import pdoxcore.init.ModBlocks;
+import pdoxcore.util.ModLogger;
+import pdoxcore.util.References;
 
 /**
  * Created by WildWolf on 16/08/2016.
  */
 public class Debugger extends Item {
+
+    private static ModLogger logger = new ModLogger(References.Mod.MODID);
 
     public Debugger(){
 
@@ -23,11 +28,8 @@ public class Debugger extends Item {
 
     @Override
     public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ){
-        if(worldIn.isRemote) {
-            System.out.println(pos);
-        }
         if(!worldIn.isRemote) {
-            System.out.println("Is server starting on setting blocks");
+            logger.info("Server starting on setting blocks");
             for(int i = -75; i <= 75; i++){
                 for(int j = 2; j <= 255; j++){
                     for (int k = -75; k <= 75; k++){
@@ -39,15 +41,16 @@ public class Debugger extends Item {
                         BlockPos blockPos = new BlockPos(x,y,z);
                         IBlockState old = worldIn.getBlockState(blockPos);
                         IBlockState air = Blocks.AIR.getDefaultState();
-                        IBlockState ore = ModBlocks.ores[7].getDefaultState();
+                        IBlockState ore = ModBlocks.ores[2].getDefaultState();
                         if(worldIn.getBlockState(blockPos) != ore && worldIn.getBlockState(blockPos) != air) {
                             worldIn.setBlockState(blockPos, air, 2);
                             worldIn.notifyBlockUpdate(blockPos, old, air, 2);
+                            logger.info("Setting:" + old + " with air at:" + blockPos);
                         }
                     }
                 }
             }
-            System.out.println("Done setting blocks");
+            logger.info("Done setting blocks");
         }
         return EnumActionResult.PASS;
     }

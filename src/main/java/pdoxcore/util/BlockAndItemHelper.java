@@ -1,4 +1,4 @@
-package pdoxcore.stuff;
+package pdoxcore.util;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;

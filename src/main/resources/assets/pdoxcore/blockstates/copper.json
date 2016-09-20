@@ -1,5 +1,5 @@
 {
     "variants":{
-        "normal": { "model": "pdoxcore:copper" }
+        "normal": { "model": "pdoxcore:ores/copper" }
     }
 }

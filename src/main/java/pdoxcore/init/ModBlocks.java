@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 import pdoxcore.blocks.*;
-import pdoxcore.stuff.BlockAndItemHelper;
+import pdoxcore.util.BlockAndItemHelper;
 
 /**
  * Created by WildWolf on 19/05/2016.

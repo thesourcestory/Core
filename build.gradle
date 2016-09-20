@@ -201,7 +201,7 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
                 println(fileLocation)
             }
             if(type == "state") {
-                fileLocation = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\blockstate\\" + directoryPath +
+                fileLocation = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\blockstates\\" +
                         newFileName.toString() + ".json"
                 println(fileLocation)
             }
@@ -276,4 +276,11 @@ task makeJSONItems << {
 task makeJSONBlocks << {
     createBlockJSON();
     print 'finished making JSON for existing block textures';
+}
+
+task makeJSONAll << {
+    createBlockJSON();
+    print 'finished making JSON for existing block textures';
+    createItemJSON();
+    print 'Finished making JSON for existing item textures';
 }

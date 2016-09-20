@@ -1,7 +1,7 @@
 package pdoxcore.proxy;
 
 import pdoxcore.init.ModBlocks;
-import pdoxcore.stuff.BlockAndItemHelper;
+import pdoxcore.util.BlockAndItemHelper;
 
 /**
  * Created by WildWolf on 22/05/2016.

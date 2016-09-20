@@ -3,7 +3,7 @@ package pdoxcore.init;
 import net.minecraft.item.Item;
 import pdoxcore.items.Ingots;
 import pdoxcore.items.OreChunk;
-import pdoxcore.stuff.BlockAndItemHelper;
+import pdoxcore.util.BlockAndItemHelper;
 import pdoxcore.items.Debugger;
 
 /**

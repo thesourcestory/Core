@@ -2,13 +2,13 @@
 {
   "modid": "pdoxcore",
   "name": "ParadoxCore",
-  "description": "",
+  "description": "Just a mod for ore gen",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": [""],
-  "credits": "",
+  "authorList": ["__WildWolf_", "lawl281"],
+  "credits": "Special thanks to BrassGoggledCoders for helping me with certain stuff",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

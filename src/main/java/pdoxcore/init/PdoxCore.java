@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import pdoxcore.proxy.CommonProxy;
+import pdoxcore.util.ConfigHandeler;
 import pdoxcore.util.ModLogger;
 import pdoxcore.util.References;
 import pdoxcore.world.OreGen;
@@ -43,6 +44,10 @@ public class PdoxCore {
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event){
+        ConfigHandeler.initConfig(event);
+
+        System.out.println(ConfigHandeler.getBoolean("ores.lead", "doSpawn", true));
+
         ModBlocks.init();
         ModItems.init();
 

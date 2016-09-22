@@ -5,6 +5,8 @@ import net.minecraft.block.material.Material;
 
 import pdoxcore.blocks.*;
 import pdoxcore.util.BlockAndItemHelper;
+import pdoxcore.util.ConfigHandeler;
+import pdoxcore.util.OreConfigDefault;
 
 /**
  * Created by WildWolf on 19/05/2016.
@@ -13,17 +15,18 @@ public class ModBlocks {
 
     public static BlockAndItemHelper helper = new BlockAndItemHelper();
 
-    public static Block[] ores = new Block[EnumOres.values().length];
-
-    static {
-        for (int i = 0; i < EnumOres.values().length; i++) {
-            ores[i] = new BlockOre(Material.ROCK, EnumOres.byMetadata(i).getChance(), EnumOres.byMetadata(i).getGenCount(), EnumOres.byMetadata(i).getLevel()[0], EnumOres.byMetadata(i).getLevel()[1], i, EnumOres.byMetadata(i).getName(), 2);
-        }
-    }
+    public static Block[] ores = new Block[OreConfigDefault.values().length];
 
     private static void initBlock(){
-        for (int i = 0; i < EnumOres.values().length; i++) {
-            ores[i] = new BlockOre(Material.ROCK, EnumOres.byMetadata(i).getChance(), EnumOres.byMetadata(i).getGenCount(), EnumOres.byMetadata(i).getLevel()[0], EnumOres.byMetadata(i).getLevel()[1], i, EnumOres.byMetadata(i).getName(), 2);
+        for (int i = 0; i < OreConfigDefault.values().length; i++) {
+            /*ores[i] = new BlockOre(Material.ROCK,
+                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "chance", OreConfigDefault.byNumber(i).getChance()),
+                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "genCount", OreConfigDefault.byNumber(i).getGenCount()),
+                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "minY", OreConfigDefault.byNumber(i).getMiny()),
+                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "maxY", OreConfigDefault.byNumber(i).getMaxy()), i,
+                    OreConfigDefault.byNumber(i).getOre(),
+                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "mininglvl", OreConfigDefault.byNumber(i).getMiningLvl()),
+                    ConfigHandeler.getBoolean("ores." + OreConfigDefault.byNumber(i).getOre(), "doSpawn", true));*/
         }
     }
 

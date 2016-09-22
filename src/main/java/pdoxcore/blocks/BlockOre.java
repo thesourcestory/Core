@@ -8,6 +8,7 @@ import pdoxcore.init.ModBlocks;
 import pdoxcore.init.ModItems;
 import pdoxcore.init.PdoxCore;
 import pdoxcore.items.EnumOreChunk;
+import pdoxcore.util.OreConfigDefault;
 
 import java.util.Random;
 
@@ -16,10 +17,11 @@ import java.util.Random;
  */
 public class BlockOre extends Block {
 
-    private static int[] chance = new int[EnumOres.values().length];
-    private static int[] count = new int[EnumOres.values().length];
-    private static int[][] lvl = new int[EnumOres.values().length][2];
-    private static int[] metadrop = new int[EnumOres.values().length];
+    private static int[] chance = new int[OreConfigDefault.values().length];
+    private static int[] count = new int[OreConfigDefault.values().length];
+    private static int[][] lvl = new int[OreConfigDefault.values().length][2];
+    private static int[] metadrop = new int[OreConfigDefault.values().length];
+    private static boolean[] cangen = new boolean[OreConfigDefault.values().length];
 
     /***
      * @param materialIn material
@@ -31,12 +33,13 @@ public class BlockOre extends Block {
      * @param name name of ore
      * @param lvl what tool level
      */
-    public BlockOre(Material materialIn, int chance, int count, int miny, int maxy, int where, String name, int lvl) {
+    public BlockOre(Material materialIn, int chance, int count, int miny, int maxy, int where, String name, int lvl, boolean cangen) {
         super(materialIn);
         this.chance[where] = chance;
         this.count[where] = count;
         this.lvl[where][0] = miny;
         this.lvl[where][1] = maxy;
+        this.cangen[where] = cangen;
         this.setHarvestLevel("pickaxe", lvl);
         this.setUnlocalizedName("ores." + name);
         this.setRegistryName(name);
@@ -75,6 +78,10 @@ public class BlockOre extends Block {
 
     public static int[][] getLevel() {
         return lvl;
+    }
+
+    public static boolean[] getCangen(){
+        return cangen;
     }
 
     @Override

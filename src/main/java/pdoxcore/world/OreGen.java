@@ -23,7 +23,9 @@ public class OreGen implements IWorldGenerator {
 
     public OreGen() {
         for (int i = 0; i < 36; i++) {
-            this.ores[i] = new WorldGenMinable(ModBlocks.ores[i].getDefaultState(), BlockOre.getCount()[i]);
+            if(BlockOre.getCangen()[i]) {
+                this.ores[i] = new WorldGenMinable(ModBlocks.ores[i].getDefaultState(), BlockOre.getCount()[i]);
+            }
         }
         this.chance = BlockOre.getChance();
         this.level = BlockOre.getLevel();

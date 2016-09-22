@@ -1,5 +1,7 @@
 package pdoxcore.util;
 
+import javax.security.auth.login.Configuration;
+
 /**
  * Created by WildWolf on 20/09/2016.
  */

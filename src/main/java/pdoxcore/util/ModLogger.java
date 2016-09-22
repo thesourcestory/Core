@@ -11,14 +11,16 @@ import net.minecraftforge.classloading.FMLForgePlugin;
 public class ModLogger implements ILogger {
     private Logger modLog;
     private boolean isDev;
+    private String modid;
 
-    public ModLogger(String modid) {
-        this(LogManager.getLogger(modid));
+    public ModLogger(){
+        this(References.Mod.MODID);
     }
 
-    public ModLogger(Logger modLog) {
-        this.modLog = modLog;
+    public ModLogger(String modid) {
+        this.modLog = LogManager.getLogger(modid);
         this.isDev = !FMLForgePlugin.RUNTIME_DEOBF;
+        this.modid = modid;
     }
 
     @Override
@@ -63,5 +65,9 @@ public class ModLogger implements ILogger {
     public void devError(String message) {
         if(this.isDev)
             this.error(message);
+    }
+
+    public String getModid(){
+        return modid;
     }
 }

@@ -15,8 +15,8 @@ public class ConfigHandeler {
 
     public static void initConfig(FMLPreInitializationEvent event) {
         file = new File(event.getModConfigurationDirectory().toString() + "/pdox/core.cfg");
+        configuration = new Configuration(file);
         if (!file.exists()) {
-            configuration = new Configuration(file);
 
             configuration.setCategoryComment("Ores","Change values based on what you want to happen");
 

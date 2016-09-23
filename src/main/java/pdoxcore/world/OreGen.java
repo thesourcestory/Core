@@ -36,7 +36,7 @@ public class OreGen implements IWorldGenerator {
         switch (world.provider.getDimension()) {
             case 0:
                 for (int i = 0; i < ores.length; i++) {
-                    if (ores != null) {
+                    if (ores[i] != null) {
                         runGenerator(ores[i], world, random, chunkX, chunkZ, chance[i], level[i][0], level[i][1]);
                     }
                 }

@@ -19,14 +19,14 @@ public class ModBlocks {
 
     private static void initBlock(){
         for (int i = 0; i < OreConfigDefault.values().length; i++) {
-            /*ores[i] = new BlockOre(Material.ROCK,
+            ores[i] = new BlockOre(Material.ROCK,
                     ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "chance", OreConfigDefault.byNumber(i).getChance()),
                     ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "genCount", OreConfigDefault.byNumber(i).getGenCount()),
                     ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "minY", OreConfigDefault.byNumber(i).getMiny()),
                     ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "maxY", OreConfigDefault.byNumber(i).getMaxy()), i,
                     OreConfigDefault.byNumber(i).getOre(),
                     ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "mininglvl", OreConfigDefault.byNumber(i).getMiningLvl()),
-                    ConfigHandeler.getBoolean("ores." + OreConfigDefault.byNumber(i).getOre(), "doSpawn", true));*/
+                    ConfigHandeler.getBoolean("ores." + OreConfigDefault.byNumber(i).getOre(), "doSpawn", true));
         }
     }
 

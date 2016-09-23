@@ -46,8 +46,6 @@ public class PdoxCore {
     public static void preInit(FMLPreInitializationEvent event){
         ConfigHandeler.initConfig(event);
 
-        System.out.println(ConfigHandeler.getBoolean("ores.lead", "doSpawn", true));
-
         ModBlocks.init();
         ModItems.init();
 

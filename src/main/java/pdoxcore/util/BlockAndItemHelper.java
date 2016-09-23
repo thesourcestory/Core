@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class BlockAndItemHelper {
 
-    private static String modid = "pdoxcore";
+    private static String modid = References.Mod.MODID;
 
     /**
      * for rendering blocks

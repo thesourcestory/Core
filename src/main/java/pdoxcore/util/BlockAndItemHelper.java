@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 /**
  * Created by WildWolf on 28/06/2016.
@@ -115,6 +116,30 @@ public class BlockAndItemHelper {
         item.setUnlocalizedName(name);
         item.setRegistryName(name);
         GameRegistry.register(item);
+    }
+
+    /**
+     * Item Oredic
+     *
+     * @param string the oredic name
+     * @param items what items are in the same oredic
+     */
+    public void registerOreDic(String string, Item... items){
+        for(Item item : items){
+            OreDictionary.registerOre(string, item);
+        }
+    }
+
+    /**
+     * Block Oredic
+     *
+     * @param string the oredic name
+     * @param blocks what blocks are in the same oredic
+     */
+    public void registerOreDic(String string, Block... blocks){
+        for(Block block: blocks){
+            OreDictionary.registerOre(string, block);
+        }
     }
 
 }

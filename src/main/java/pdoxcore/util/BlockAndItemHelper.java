@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -139,6 +140,18 @@ public class BlockAndItemHelper {
     public void registerOreDic(String string, Block... blocks){
         for(Block block: blocks){
             OreDictionary.registerOre(string, block);
+        }
+    }
+
+    /**
+     * ItemStack Oredic
+     *
+     * @param string the oredic name
+     * @param itemStacks what itemstacks are in the same oredic
+     */
+    public void registerOreDic(String string, ItemStack... itemStacks){
+        for (ItemStack stack: itemStacks) {
+            OreDictionary.registerOre(string, stack);
         }
     }
 

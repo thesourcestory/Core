@@ -35,7 +35,7 @@ public enum OreConfigDefault {
     MALACHITE(28, "Malachite", 4, 10, 5, 20, 2),
     MOLYBDENITE(29, "Molybdenite", 4, 10, 5, 20, 2),
     PENTALANDITE(30, "Pentalandite", 4, 10, 5, 20, 2),
-    PYROLUSITE(31, "Prolusite", 4, 10, 5, 20, 2),
+    PYROLUSITE(31, "Pyrolusite", 4, 10, 5, 20, 2),
     SCHEELITE(32, "Scheelite", 4, 10, 5, 20, 2),
     SPERRYLITE(33, "Sperrylite", 4, 10, 5, 20, 2),
     PSHALERITE(34, "Pshalerite", 4, 10, 5, 20, 2),

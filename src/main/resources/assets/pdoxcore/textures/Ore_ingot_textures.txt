@@ -1,2 +1,0 @@
-Every pixel correspond to the item in the items class
-Look in the lang file to see what is what

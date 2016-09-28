@@ -108,7 +108,7 @@ def createIBlockJSON() {
 }
 
 def createBStateJSON() {
-    File modelDirectory = new File("./src/main/resources/assets/" + archivesBaseName + "/blockstate")
+    File modelDirectory = new File("./src/main/resources/assets/" + archivesBaseName + "/blockstates")
     if(!modelDirectory.exists()) modelDirectory.mkdir()
 
     File textureDirectory = new File("./src/main/resources/assets/" + archivesBaseName + "/textures/blocks")

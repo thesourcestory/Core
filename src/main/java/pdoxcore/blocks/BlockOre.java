@@ -97,7 +97,7 @@ public class BlockOre extends Block {
     @Override
     public int damageDropped(IBlockState state) {
         int meta = 0;
-        for (int i = 0; i <= ModBlocks.ores.length; i++) {
+        for (int i = 0; i < ModBlocks.ores.length; i++) {
             if (state.getBlock() == ModBlocks.ores[i]) {
                 meta = metadrop[i];
             }

@@ -1,5 +1,6 @@
 package pdoxcore.items;
 
+import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -41,11 +42,36 @@ public class Debugger extends Item {
                         BlockPos blockPos = new BlockPos(x,y,z);
                         IBlockState old = worldIn.getBlockState(blockPos);
                         IBlockState air = Blocks.AIR.getDefaultState();
-                        IBlockState ore = ModBlocks.ores[2].getDefaultState();
-                        if(worldIn.getBlockState(blockPos) != ore && worldIn.getBlockState(blockPos) != air) {
-                            worldIn.setBlockState(blockPos, air, 2);
-                            worldIn.notifyBlockUpdate(blockPos, old, air, 2);
-                            logger.info("Setting:" + old + " with air at:" + blockPos);
+                        IBlockState stone = Blocks.STONE.getDefaultState();
+                        IBlockState granite = Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE);
+                        IBlockState diorite = Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE);
+                        IBlockState andesite = Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE);
+                        IBlockState dirt = Blocks.DIRT.getDefaultState();
+                        IBlockState grass = Blocks.GRASS.getDefaultState();
+                        IBlockState gravel = Blocks.GRAVEL.getDefaultState();
+                        IBlockState snow = Blocks.SNOW_LAYER.getDefaultState();
+                        IBlockState iron = Blocks.IRON_ORE.getDefaultState();
+                        IBlockState gold = Blocks.GOLD_ORE.getDefaultState();
+                        IBlockState lapis = Blocks.LAPIS_ORE.getDefaultState();
+                        IBlockState coal = Blocks.COAL_ORE.getDefaultState();
+                        IBlockState diamond = Blocks.DIAMOND_ORE.getDefaultState();
+                        IBlockState sand = Blocks.SAND.getDefaultState();
+                        IBlockState clay = Blocks.CLAY.getDefaultState();
+                        IBlockState sandstone = Blocks.SANDSTONE.getDefaultState();
+                        IBlockState fern = Blocks.TALLGRASS.getStateFromMeta(2);
+                        IBlockState tallgrass = Blocks.TALLGRASS.getStateFromMeta(1);
+                        IBlockState deadbush = Blocks.TALLGRASS.getStateFromMeta(0);
+                        for(int c = 0; c < BlockPlanks.EnumType.values().length -2; c++) {
+                            IBlockState wood = Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.byMetadata(c));
+                            IBlockState leaves = Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.byMetadata(c));
+                            for(int v = 0; v < 16; v++) {
+                                IBlockState water = Blocks.WATER.getStateFromMeta(v);
+                                IBlockState lava = Blocks.LAVA.getStateFromMeta(v);
+                                if ((worldIn.getBlockState(blockPos) == fern || worldIn.getBlockState(blockPos) == tallgrass || worldIn.getBlockState(blockPos) == deadbush || worldIn.getBlockState(blockPos) == sandstone || worldIn.getBlockState(blockPos) == sand || worldIn.getBlockState(blockPos) == clay || worldIn.getBlockState(blockPos) == iron || worldIn.getBlockState(blockPos) == gold || worldIn.getBlockState(blockPos) == lapis || worldIn.getBlockState(blockPos) == coal || worldIn.getBlockState(blockPos) == diamond || worldIn.getBlockState(blockPos) == stone || worldIn.getBlockState(blockPos) == leaves || worldIn.getBlockState(blockPos) == wood || worldIn.getBlockState(blockPos) == snow || worldIn.getBlockState(blockPos) == water || worldIn.getBlockState(blockPos) == lava || worldIn.getBlockState(blockPos) == granite || worldIn.getBlockState(blockPos) == diorite || worldIn.getBlockState(blockPos) == andesite || worldIn.getBlockState(blockPos) == dirt || worldIn.getBlockState(blockPos) == grass || worldIn.getBlockState(blockPos) == gravel) && worldIn.getBlockState(blockPos) != air) {
+                                    worldIn.setBlockState(blockPos, air, 2);
+                                    worldIn.notifyBlockUpdate(blockPos, old, air, 2);
+                                }
+                            }
                         }
                     }
                 }

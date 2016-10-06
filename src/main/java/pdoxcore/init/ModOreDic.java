@@ -21,11 +21,11 @@ public class ModOreDic {
         }
 
         for (int i = 0; i < ItemList.ingots.length; i++){
-            helper.registerOreDic(ItemList.Ingots.byMetadata(i).getName(), ItemList.ingots[i]);
+            helper.registerOreDic(ItemList.Ingots.byMetadata(i).getOredicName(), ItemList.ingots[i]);
         }
 
         for (int i = 0; i < ItemList.chunks.length; i++){
-            helper.registerOreDic(ItemList.Chunks.byMetadata(i).getName(), ItemList.chunks[i]);
+            helper.registerOreDic(ItemList.Chunks.byMetadata(i).getOredicName(), ItemList.chunks[i]);
         }
 
     }

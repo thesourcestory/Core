@@ -118,6 +118,10 @@ public class ItemList {
         }
 
         public String getName() {
+            return name;
+        }
+
+        public String getOredicName() {
             return "ingot" + name;
         }
 
@@ -190,6 +194,10 @@ public class ItemList {
         }
 
         public String getName() {
+            return name;
+        }
+
+        public String getOredicName() {
             return "chunk" + name;
         }
 

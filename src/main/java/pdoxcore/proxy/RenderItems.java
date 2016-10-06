@@ -2,6 +2,8 @@ package pdoxcore.proxy;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import pdoxcore.init.ModItems;
+import pdoxcore.items.EnumOreChunk;
+import pdoxcore.items.ItemList;
 import pdoxcore.util.BlockAndItemHelper;
 
 /**
@@ -12,10 +14,13 @@ public class RenderItems{
     public static BlockAndItemHelper helper = new BlockAndItemHelper();
 
     public static void render(){
-        helper.renderItem(ModItems.ingots, 19, new ModelResourceLocation("pdoxcore:ingots/copper", "inventory"));
-        helper.renderItem(ModItems.ingots, 50, new ModelResourceLocation("pdoxcore:ingots/lead", "inventory"));
         helper.renderItem(ModItems.debugger);
-        helper.renderItem(ModItems.orechunk, 1, new ModelResourceLocation("pdoxcore:chunks/copper", "inventory"));
+        for(int i = 0; i < EnumOreChunk.values().length; i++){
+            helper.renderItem(ModItems.orechunk, i, new ModelResourceLocation("pdoxcore:chunks/" + EnumOreChunk.byMetadata(i).getName(), "inventory"));
+        }
+        for(int i = 0; i < ItemList.Ingots.values().length; i++){
+            helper.renderItem(ModItems.ingots, i, new ModelResourceLocation("pdoxcore:ingots/" + ItemList.Ingots.byMetadata(i).getName(), "inventory"));
+        }
     }
 
 }

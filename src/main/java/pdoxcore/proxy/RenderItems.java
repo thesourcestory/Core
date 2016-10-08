@@ -22,5 +22,4 @@ public class RenderItems{
             helper.renderItem(ModItems.ingots, i, new ModelResourceLocation("pdoxcore:ingots/" + ItemList.Ingots.byMetadata(i).getName(), "inventory"));
         }
     }
-
 }

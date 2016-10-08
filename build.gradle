@@ -159,15 +159,7 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
 
             createJSONsForTextures(file, newDirectoryPath, type)
         } else {
-            String fileName = file.name
-            String newFileName = ""
-            for (Character aChar : fileName.toCharArray()) {
-                if (Character.isUpperCase(aChar)) {
-                    newFileName += "_" + aChar.toString().toLowerCase()
-                } else {
-                    newFileName += aChar
-                }
-            }
+            String newFileName = file.name
 
             if (newFileName.startsWith("item")) {
                 newFileName = newFileName.replaceFirst("item", "")

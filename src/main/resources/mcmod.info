@@ -1,8 +1,8 @@
 [
 {
-  "modid": "pdoxcore",
-  "name": "ParadoxCore",
-  "description": "Just a mod for ore gen",
+  "modid": "realtech",
+  "name": "Realtech",
+  "description": "'Realistic' technology, ores, elements and more",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",

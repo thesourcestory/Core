@@ -21,8 +21,8 @@ plugins {
 }
 */
 version = "0.1.0"
-group= "pdoxcore"
-archivesBaseName = "pdoxcore"
+group= "realtech"
+archivesBaseName = "realtech"
 
 minecraft {
     version = "1.10.2-12.18.1.2094"
@@ -150,7 +150,7 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
                 newDirectoryPathFileString = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\models\\item\\" + newDirectoryPath
             }
             if(type == "state") {
-                newDirectoryPathFileString = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\blockstates\\" + newDirectoryPath
+                newDirectoryPathFileString = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\blockstates\\"
             }
             File newDirectoryPathFile = new File(newDirectoryPathFileString);
             if(!newDirectoryPathFile.exists()) {

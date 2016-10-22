@@ -5,7 +5,7 @@ import net.minecraft.block.material.Material;
 
 import realtech.blocks.*;
 import realtech.util.BlockAndItemHelper;
-import realtech.util.ConfigHandeler;
+import realtech.config.ConfigHandeler;
 import realtech.util.OreConfigDefault;
 
 /**
@@ -20,13 +20,13 @@ public class ModBlocks {
     private static void initBlock(){
         for (int i = 0; i < OreConfigDefault.values().length; i++) {
             ores[i] = new BlockOre(Material.ROCK,
-                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "chance", OreConfigDefault.byNumber(i).getChance()),
-                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "genCount", OreConfigDefault.byNumber(i).getGenCount()),
-                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "minY", OreConfigDefault.byNumber(i).getMiny()),
-                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "maxY", OreConfigDefault.byNumber(i).getMaxy()), i,
+                    ConfigHandeler.getInteger("oregen", "ores." + OreConfigDefault.byNumber(i).getOre(), "chance", OreConfigDefault.byNumber(i).getChance()),
+                    ConfigHandeler.getInteger("oregen", "ores." + OreConfigDefault.byNumber(i).getOre(), "genCount", OreConfigDefault.byNumber(i).getGenCount()),
+                    ConfigHandeler.getInteger("oregen", "ores." + OreConfigDefault.byNumber(i).getOre(), "minY", OreConfigDefault.byNumber(i).getMiny()),
+                    ConfigHandeler.getInteger("oregen", "ores." + OreConfigDefault.byNumber(i).getOre(), "maxY", OreConfigDefault.byNumber(i).getMaxy()), i,
                     OreConfigDefault.byNumber(i).getOre().toLowerCase(),
-                    ConfigHandeler.getInteger("ores." + OreConfigDefault.byNumber(i).getOre(), "mininglvl", OreConfigDefault.byNumber(i).getMiningLvl()),
-                    ConfigHandeler.getBoolean("ores." + OreConfigDefault.byNumber(i).getOre(), "doSpawn", true));
+                    ConfigHandeler.getInteger("oregen", "ores." + OreConfigDefault.byNumber(i).getOre(), "mininglvl", OreConfigDefault.byNumber(i).getMiningLvl()),
+                    ConfigHandeler.getBoolean("oregen", "ores." + OreConfigDefault.byNumber(i).getOre(), "doSpawn", true));
         }
     }
 

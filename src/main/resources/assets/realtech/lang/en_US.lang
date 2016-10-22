@@ -1,5 +1,5 @@
-itemGroup.pdoxcoreores=PdoxCoreOres
-itemGroup.pdoxcoreelements=PdoxCoreElements
+itemGroup.realtechores=RealtechOres
+itemGroup.realtechelements=RealtechElements
 
 tile.ores.ilmenite.name=Ilmenite
 tile.ores.magnetite.name=Magnetite

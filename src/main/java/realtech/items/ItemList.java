@@ -12,6 +12,232 @@ public class ItemList {
     public static final ItemStack copperingot = new ItemStack(ModItems.ingots, 1, 19);
     public static ItemStack[] ingots = new ItemStack[Ingots.values().length];
     public static ItemStack[] chunks = new ItemStack[Chunks.values().length];
+    public static ItemStack[] axes = new ItemStack[ModTools.axe.length];
+    public static ItemStack[] paxes = new ItemStack[ModTools.paxe.length];
+    public static ItemStack[] spades = new ItemStack[ModTools.spade.length];
+    public static ItemStack[] swords = new ItemStack[ModTools.swords.length];
+    public static ItemStack[] hoes = new ItemStack[ModTools.hoe.length];
+
+    public static ItemStack getStackFromMeta(int meta, ItemStack[] itemStacks){
+        return itemStacks[Ingots.byMetadata(meta).getMeta()];
+    }
+
+    public static String getNameFromStack(ItemStack stack){
+        if(stack == ingots[stack.getItemDamage()])
+            return Ingots.byMetadata(stack.getItemDamage()).getName();
+        else if(stack == axes[stack.getItemDamage()])
+            return Axes.byMetadata(stack.getItemDamage()).getName();
+        else if(stack == paxes[stack.getItemDamage()])
+            return Paxes.byMetadata(stack.getItemDamage()).getName();
+        else if(stack == spades[stack.getItemDamage()])
+            return Spades.byMetadata(stack.getItemDamage()).getName();
+        else if(stack == swords[stack.getItemDamage()])
+            return Swords.byMetadata(stack.getItemDamage()).getName();
+        else if(stack == hoes[stack.getItemDamage()])
+            return Hoes.byMetadata(stack.getItemDamage()).getName();
+        else
+            return Chunks.byMetadata(stack.getItemDamage()).getName();
+    }
+
+    public enum Swords{
+        ;
+
+        private static final Swords[] META_LOOKUP = new Swords[values().length];
+
+        private String name;
+        private int meta;
+
+        Swords(int meta, String name){
+            this.name = name;
+            this.meta = meta;
+        }
+
+        public int getMeta() {
+            return meta;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getOredicName() {
+            return "ingot" + name;
+        }
+
+        public static Swords byMetadata(int meta){
+            if(meta < 0 || meta >= META_LOOKUP.length){
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        static {
+            for (Swords ingots : values()) {
+                META_LOOKUP[ingots.getMeta()] = ingots;
+            }
+        }
+    }
+
+    public enum Axes{
+        ;
+
+        private static final Axes[] META_LOOKUP = new Axes[values().length];
+
+        private String name;
+        private int meta;
+
+        Axes(int meta, String name){
+            this.name = name;
+            this.meta = meta;
+        }
+
+        public int getMeta() {
+            return meta;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getOredicName() {
+            return "ingot" + name;
+        }
+
+        public static Axes byMetadata(int meta){
+            if(meta < 0 || meta >= META_LOOKUP.length){
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        static {
+            for (Axes ingots : values()) {
+                META_LOOKUP[ingots.getMeta()] = ingots;
+            }
+        }
+    }
+
+    public enum Paxes{
+        ;
+
+        private static final Paxes[] META_LOOKUP = new Paxes[values().length];
+
+        private String name;
+        private int meta;
+
+        Paxes(int meta, String name){
+            this.name = name;
+            this.meta = meta;
+        }
+
+        public int getMeta() {
+            return meta;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getOredicName() {
+            return "ingot" + name;
+        }
+
+        public static Paxes byMetadata(int meta){
+            if(meta < 0 || meta >= META_LOOKUP.length){
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        static {
+            for (Paxes ingots : values()) {
+                META_LOOKUP[ingots.getMeta()] = ingots;
+            }
+        }
+    }
+
+    public enum Spades{
+        ;
+
+        private static final Spades[] META_LOOKUP = new Spades[values().length];
+
+        private String name;
+        private int meta;
+
+        Spades(int meta, String name){
+            this.name = name;
+            this.meta = meta;
+        }
+
+        public int getMeta() {
+            return meta;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getOredicName() {
+            return "ingot" + name;
+        }
+
+        public static Spades byMetadata(int meta){
+            if(meta < 0 || meta >= META_LOOKUP.length){
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        static {
+            for (Spades ingots : values()) {
+                META_LOOKUP[ingots.getMeta()] = ingots;
+            }
+        }
+    }
+
+    public enum Hoes{
+        ;
+
+        private static final Hoes[] META_LOOKUP = new Hoes[values().length];
+
+        private String name;
+        private int meta;
+
+        Hoes(int meta, String name){
+            this.name = name;
+            this.meta = meta;
+        }
+
+        public int getMeta() {
+            return meta;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getOredicName() {
+            return "ingot" + name;
+        }
+
+        public static Hoes byMetadata(int meta){
+            if(meta < 0 || meta >= META_LOOKUP.length){
+                meta = 0;
+            }
+
+            return META_LOOKUP[meta];
+        }
+
+        static {
+            for (Hoes ingots : values()) {
+                META_LOOKUP[ingots.getMeta()] = ingots;
+            }
+        }
+    }
 
     public enum Ingots{
         LITHIUM(0,"Lithium"),

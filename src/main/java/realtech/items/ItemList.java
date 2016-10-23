@@ -4,6 +4,9 @@ import net.minecraft.item.ItemStack;
 import realtech.init.ModItems;
 import realtech.init.ModTools;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by WildWolf on 29/08/2016.
  */
@@ -331,6 +334,7 @@ public class ItemList {
         ASTATINE(87,"Astatine");
 
         private static final Ingots[] META_LOOKUP = new Ingots[values().length];
+        private static Map<String, Ingots> map = new HashMap<String, Ingots>();
 
         private String name;
         private int meta;
@@ -360,9 +364,14 @@ public class ItemList {
             return META_LOOKUP[meta];
         }
 
+        public static Ingots byName(String name){
+            return map.get(name);
+        }
+
         static {
             for (Ingots ingots : values()) {
                 META_LOOKUP[ingots.getMeta()] = ingots;
+                map.put(ingots.getName(), ingots);
             }
         }
     }

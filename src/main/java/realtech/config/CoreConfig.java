@@ -15,6 +15,7 @@ public class CoreConfig {
         ConfigHandeler.setBoolean("core", "core.oregen", "enabled", true);
         ConfigHandeler.setBoolean("core", "core.tools", "enabled", true);
         ConfigHandeler.setBoolean("core", "core.armor", "enabled", true);
+        ConfigHandeler.setBoolean("core", "core.lumberaxe", "enabled", false);
 
         ConfigHandeler.saveCfg("core");
     }

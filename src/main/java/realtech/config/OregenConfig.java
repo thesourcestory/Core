@@ -12,6 +12,7 @@ public class OregenConfig {
         ConfigHandeler.initConfig(event, "oregen");
 
         ConfigHandeler.setCustomComment("oregen", "Ores", "Change values based on what you want to happen");
+        ConfigHandeler.setCustomComment("oregen", "Oregen", "use the give command and give yourself the debugger item to see the oregen better");
 
         for (OreConfigDefault ore: OreConfigDefault.values()) {
             ConfigHandeler.setInteger("oregen", "ores." + ore.getOre(), "genCount", ore.getGenCount());

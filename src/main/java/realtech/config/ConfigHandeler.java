@@ -38,7 +38,7 @@ public class ConfigHandeler {
         }
         configuration.get(string).save();
         if (file.exists())
-            logger.devInfo(logger.getModid() + " has config file" + file.getName());
+            logger.devInfo(logger.getModid() + " has config file " + file.getName());
 
     }
     

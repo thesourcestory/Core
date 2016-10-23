@@ -21,7 +21,7 @@ public class ItemLumberAxe extends ItemAxe {
         super(material, damage, speed);
         this.setCreativeTab(Realtech.realtechtoolsandarmor);
         this.setUnlocalizedName(material.name() + "laxe");
-        this.setMaxDamage(material.getMaxUses() * 3);
+        this.setMaxDamage((int) (material.getMaxUses() * 2.11));
     }
 
     @Override
@@ -38,7 +38,15 @@ public class ItemLumberAxe extends ItemAxe {
                 if (!temp2.containsValue(temp.get(i)) && !temp3.containsValue(temp.get(i)))
                     temp2 = getPosibleCoords(temp.get(i));
         }
-        temp3 = getPosibleCoords(temp, temp2);
+        for (int i = 0; i < temp.size(); i++) {
+            if (worldIn.getBlockState(temp.get(i)).getBlock() == Blocks.LOG || worldIn.getBlockState(temp.get(i)).getBlock() == Blocks.LOG2)
+                temp3.put(temp3.size(), temp.get(i));
+        }
+        for (int i = 0; i < temp2.size(); i++) {
+            if (worldIn.getBlockState(temp.get(i)).getBlock() == Blocks.LOG || worldIn.getBlockState(temp.get(i)).getBlock() == Blocks.LOG2)
+                if (temp3.containsValue(temp2.get(i)))
+                    temp3.put(temp3.size(), temp2.get(i));
+        }
         while (!finished) {
             for (int i = 0; i < temp3.size(); i++) {
                 if (worldIn.getBlockState(temp3.get(i)).getBlock() == Blocks.LOG || worldIn.getBlockState(temp3.get(i)).getBlock() == Blocks.LOG2) {
@@ -51,10 +59,14 @@ public class ItemLumberAxe extends ItemAxe {
                             }
                     }
                     for (int j = 0; j < temp2.size(); j++) {
-                        if(!temp3.containsValue(temp2.get(j))){
+                        if (!temp3.containsValue(temp2.get(j))) {
                             temp3.put(temp3.size(), temp2.get(j));
                         }
                     }
+                }
+                if (temp3.size() >= 1000) {
+                    finished = true;
+                    break;
                 }
             }
             if (!triggered) {
@@ -63,10 +75,13 @@ public class ItemLumberAxe extends ItemAxe {
             triggered = false;
         }
         for (int i = 0; i < temp3.size(); i++) {
-            if (worldIn.getBlockState(temp3.get(i)).getBlock() == Blocks.LOG || worldIn.getBlockState(temp3.get(i)).getBlock() == Blocks.LOG2) {
-                worldIn.destroyBlock(temp3.get(i), true);
-                howMany++;
-            }
+            int remining = ((stack.getMaxDamage() - stack.getItemDamage()) - howMany) + 1;
+            if (remining != 0) {
+                if (worldIn.getBlockState(temp3.get(i)).getBlock() == Blocks.LOG || worldIn.getBlockState(temp3.get(i)).getBlock() == Blocks.LOG2) {
+                    worldIn.destroyBlock(temp3.get(i), true);
+                    howMany++;
+                }
+            } else break;
         }
         stack.damageItem(howMany, entityLiving);
         return false;

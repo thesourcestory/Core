@@ -2,6 +2,7 @@ package realtech.items;
 
 import net.minecraft.item.ItemStack;
 import realtech.init.ModItems;
+import realtech.init.ModTools;
 
 /**
  * Created by WildWolf on 29/08/2016.

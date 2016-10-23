@@ -43,7 +43,7 @@ public class BlockOre extends Block {
         this.setHarvestLevel("pickaxe", lvl);
         this.setUnlocalizedName("ores." + name);
         this.setRegistryName(name);
-        this.setCreativeTab(Realtech.pdoxcoreores);
+        this.setCreativeTab(Realtech.realtechores);
     }
 
     /***
@@ -65,7 +65,7 @@ public class BlockOre extends Block {
         this.setHarvestLevel("pickaxe", lvl);
         this.setUnlocalizedName("ores." + name);
         this.setRegistryName(name);
-        this.setCreativeTab(Realtech.pdoxcoreores);
+        this.setCreativeTab(Realtech.realtechores);
     }
 
     public static int[] getChance() {

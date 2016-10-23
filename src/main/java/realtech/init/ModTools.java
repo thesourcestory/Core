@@ -1,4 +1,4 @@
-package realtech.items;
+package realtech.init;
 
 import net.minecraft.item.Item;
 import realtech.items.tools.*;
@@ -15,6 +15,7 @@ public class ModTools {
     public static Item[] paxe = new Item[EnumToolSpecial.values().length];
     public static Item[] spade = new Item[EnumToolSpecial.values().length];
     public static Item[] hoe = new Item[EnumToolSpecial.values().length];
+    public static Item[] laxe = new Item[EnumToolSpecial.values().length];
 
     public static void init(){
         for (int i = 0; i < EnumToolSpecial.values().length; i++) {
@@ -23,6 +24,7 @@ public class ModTools {
             helper.registerItem(paxe[i], paxe[i].getUnlocalizedName().substring(5));
             helper.registerItem(spade[i], spade[i].getUnlocalizedName().substring(5));
             helper.registerItem(hoe[i], hoe[i].getUnlocalizedName().substring(5));
+            helper.registerItem(laxe[i], laxe[i].getUnlocalizedName().substring(5));
         }
     }
 
@@ -33,6 +35,7 @@ public class ModTools {
             paxe[i] = new ItemPickaxeSpecial(EnumToolSpecial.byCount(i).getMaterial());
             spade[i] = new ItemSpadeSpecial(EnumToolSpecial.byCount(i).getMaterial());
             hoe[i] = new ItemHoeSpecial(EnumToolSpecial.byCount(i).getMaterial());
+            laxe[i] = new ItemLumberAxe(EnumToolSpecial.byCount(i).getMaterial(), EnumToolSpecial.byCount(i).getAxeDamage() ,EnumToolSpecial.byCount(i).getAxeSpeed());
         }
     }
 

@@ -1,5 +1,8 @@
 itemGroup.realtechores=RealtechOres
 itemGroup.realtechelements=RealtechElements
+itemGroup.realtechtoolsandarmor=RealtechTools&Armor
+
+
 
 tile.ores.ilmenite.name=Ilmenite
 tile.ores.magnetite.name=Magnetite
@@ -38,6 +41,9 @@ tile.ores.silver.name=Silver
 tile.ores.tin.name=Tin
 tile.ores.titanium.name=Titanium
 tile.ores.zinc.name=Zinc
+
+
+
 item.ingots.0.name=Lithium Ingot
 item.ingots.1.name=Sodium
 item.ingots.2.name=Potassium
@@ -163,5 +169,14 @@ item.orechunk.silver.name=Silver Chunk
 item.orechunk.tin.name=Tin Chunk
 item.orechunk.titanium.name=Titanium Chunk
 item.orechunk.zinc.name=Zinc Chunk
-
 item.debugger.name=Debugger
+item.leadchest.name=Lead Chestplate
+item.leadlegs.name=Lead Leggings
+item.leadfeet.name=Lead Boots
+item.leadhead.name=Lead Helmet
+item.leadsword.name=Lead Sword
+item.leadaxe.name=Lead Axe
+item.leadpaxe.name=Lead Pickaxe
+item.leadspade.name=Lead Shovel
+item.leadhoe.name=Lead Hoe
+item.lead

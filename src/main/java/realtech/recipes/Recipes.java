@@ -1,11 +1,7 @@
 package realtech.recipes;
 
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import realtech.init.ModItems;
-import realtech.items.ItemList;
-import realtech.items.ModArmor;
 
 /**
  * Created by WildWolf on 29/08/2016.

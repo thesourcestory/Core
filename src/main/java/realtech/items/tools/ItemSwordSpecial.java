@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.PotionEffect;
 import realtech.init.Realtech;
-import realtech.items.ModTools;
+import realtech.init.ModTools;
 
 import java.util.Random;
 
@@ -21,7 +21,7 @@ public class ItemSwordSpecial extends ItemSword {
 
     public ItemSwordSpecial(ToolMaterial material) {
         super(material);
-        this.setCreativeTab(Realtech.pdoxcoretoolsandarmor);
+        this.setCreativeTab(Realtech.realtechtoolsandarmor);
         this.setUnlocalizedName(material.name() + "sword");
     }
 

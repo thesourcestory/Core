@@ -1,6 +1,7 @@
 package realtech.init;
 
 import net.minecraft.item.Item;
+import realtech.config.ConfigHandeler;
 import realtech.items.*;
 import realtech.util.BlockAndItemHelper;
 
@@ -15,14 +16,13 @@ public class ModItems {
     public static Item orechunk = new OreChunk();
     public static Item debugger = new Debugger();
 
-    public static void init(){
+    public static void init() {
         helper.registerItem(debugger, "debugger", "debugger");
         helper.registerItem(ingots, "ingots", "ingots");
         helper.registerItem(orechunk, "orechunk", "orechunk");
+        if (ConfigHandeler.getBoolean("core", "core.armor", "enabled", true))
         ModArmor.init();
-        ModTools.init();
+        if (ConfigHandeler.getBoolean("core", "core.tools", "enabled", true))
+            ModTools.init();
     }
-
-
-
 }

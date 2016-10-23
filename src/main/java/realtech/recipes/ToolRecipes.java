@@ -1,8 +1,5 @@
 package realtech.recipes;
 
-import net.minecraft.item.ItemStack;
-import realtech.items.ModTools;
-
 /**
  * Created by WildWolf on 19/10/2016.
  */

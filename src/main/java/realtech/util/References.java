@@ -9,7 +9,7 @@ public class References {
         public static final String MODID = "realtech";
         public static final String NAME = "Realtech";
         /** "Major.Minor.Patch" */
-        public static final String VER = "0.1.0";
+        public static final String VER = "0.1.1";
         public static final String CPROXY = "realtech.proxy.ClientProxy";
         public static final String SPROXY = "realtech.proxy.CommonProxy";
     }

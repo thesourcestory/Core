@@ -15,7 +15,7 @@ public class Ingots extends Item{
     public Ingots(){
         super();
         this.setHasSubtypes(true);
-        this.setCreativeTab(Realtech.pdoxcoreelements);
+        this.setCreativeTab(Realtech.realtechelements);
     }
 
     public String getUnlocalizedName(ItemStack stack){

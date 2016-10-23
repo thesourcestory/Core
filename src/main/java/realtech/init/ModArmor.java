@@ -1,4 +1,4 @@
-package realtech.items;
+package realtech.init;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;

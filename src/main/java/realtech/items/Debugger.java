@@ -68,6 +68,7 @@ public class Debugger extends Item {
                                 if ((worldIn.getBlockState(blockPos) == fern || worldIn.getBlockState(blockPos) == tallgrass || worldIn.getBlockState(blockPos) == deadbush || worldIn.getBlockState(blockPos) == sandstone || worldIn.getBlockState(blockPos) == sand || worldIn.getBlockState(blockPos) == clay || worldIn.getBlockState(blockPos) == iron || worldIn.getBlockState(blockPos) == gold || worldIn.getBlockState(blockPos) == lapis || worldIn.getBlockState(blockPos) == coal || worldIn.getBlockState(blockPos) == diamond || worldIn.getBlockState(blockPos) == stone || worldIn.getBlockState(blockPos) == leaves || worldIn.getBlockState(blockPos) == wood || worldIn.getBlockState(blockPos) == snow || worldIn.getBlockState(blockPos) == water || worldIn.getBlockState(blockPos) == lava || worldIn.getBlockState(blockPos) == granite || worldIn.getBlockState(blockPos) == diorite || worldIn.getBlockState(blockPos) == andesite || worldIn.getBlockState(blockPos) == dirt || worldIn.getBlockState(blockPos) == grass || worldIn.getBlockState(blockPos) == gravel) && worldIn.getBlockState(blockPos) != air) {
                                     worldIn.setBlockState(blockPos, air, 2);
                                     worldIn.notifyBlockUpdate(blockPos, old, air, 2);
+                                    logger.devInfo("currently at" + blockPos.getY());
                                 }
                             }
                         }

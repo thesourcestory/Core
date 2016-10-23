@@ -15,7 +15,7 @@ public class OreChunk extends Item {
     public OreChunk() {
         super();
         this.setHasSubtypes(true);
-        this.setCreativeTab(Realtech.pdoxcoreores);
+        this.setCreativeTab(Realtech.realtechores);
     }
 
     public String getUnlocalizedName(ItemStack stack) {

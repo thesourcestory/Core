@@ -11,7 +11,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import realtech.init.Realtech;
-import realtech.items.ModArmor;
+import realtech.init.ModArmor;
 
 import java.util.Random;
 
@@ -27,7 +27,7 @@ public class ItemArmorSpecial extends ItemArmor {
         super(materialIn, renderIndexIn, equipmentSlotIn);
         this.armor = materialIn.getName();
         this.setUnlocalizedName(materialIn.getName() + equipmentSlotIn.getName());
-        this.setCreativeTab(Realtech.pdoxcoretoolsandarmor);
+        this.setCreativeTab(Realtech.realtechtoolsandarmor);
         MinecraftForge.EVENT_BUS.register(this);
     }
 

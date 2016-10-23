@@ -20,18 +20,18 @@ import realtech.world.OreGen;
 @Mod(modid = References.Mod.MODID, name = References.Mod.NAME, version = References.Mod.VER)
 public class Realtech {
 
-    @SidedProxy(clientSide = References.Mod.CPROXY,serverSide = References.Mod.SPROXY)
+    @SidedProxy(clientSide = References.Mod.CPROXY, serverSide = References.Mod.SPROXY)
     public static CommonProxy proxy;
     private static ModLogger logger = new ModLogger();
 
-    public static final CreativeTabs pdoxcoreores = ModTabs.pdoxcoreores;
+    public static final CreativeTabs realtechores = ModTabs.realtechores;
 
-    public static final CreativeTabs pdoxcoreelements = ModTabs.pdoxcoreelements;
+    public static final CreativeTabs realtechelements = ModTabs.realtechelements;
 
-    public static final CreativeTabs pdoxcoretoolsandarmor = ModTabs.pdoxcoretoolsandarmor;
+    public static final CreativeTabs realtechtoolsandarmor = ModTabs.realtechtoolsandarmor;
 
     @Mod.EventHandler
-    public static void preInit(FMLPreInitializationEvent event){
+    public static void preInit(FMLPreInitializationEvent event) {
         logger.warning("preInit of realtech might take a sec");
         ConfigHandeler.initConfigs(event);
 
@@ -40,12 +40,13 @@ public class Realtech {
 
         proxy.registerRenders();
         logger.info("preInit of realtech is done");//*/
-}
+    }
 
     @Mod.EventHandler
-    public static void init(FMLInitializationEvent event){
+    public static void init(FMLInitializationEvent event) {
         logger.warning("init of realtech might take a sec");
-        GameRegistry.registerWorldGenerator(new OreGen(), 0);
+        if (ConfigHandeler.getBoolean("core", "core.oregen", "enabled", true))
+            GameRegistry.registerWorldGenerator(new OreGen(), 0);
         Recipes.register();
 
         ModOreDic.init();
@@ -53,6 +54,6 @@ public class Realtech {
     }
 
     @Mod.EventHandler
-    public static void postInit(FMLPostInitializationEvent event){
+    public static void postInit(FMLPostInitializationEvent event) {
     }
 }

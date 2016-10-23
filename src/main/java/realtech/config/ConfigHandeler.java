@@ -36,10 +36,9 @@ public class ConfigHandeler {
         if (configuration.get(string) == null) {
             configuration.put(string, new Configuration(file));
         }
-        if (!file.exists())
-            configuration.get(string).save();
-        else if (file.exists())
-            logger.warning(logger.getModid() + " has config file");
+        configuration.get(string).save();
+        if (file.exists())
+            logger.devInfo(logger.getModid() + " has config file" + file.getName());
 
     }
     

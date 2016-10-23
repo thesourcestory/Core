@@ -8,21 +8,21 @@ import net.minecraft.item.Item;
  */
 public class ModTabs {
 
-    public static final CreativeTabs pdoxcoreores = new CreativeTabs("realtechores") {
+    public static final CreativeTabs realtechores = new CreativeTabs("realtechores") {
         @Override
         public Item getTabIconItem() {
             return Item.getItemFromBlock(ModBlocks.ores[1]);
         }
     };
 
-    public static final CreativeTabs pdoxcoreelements = new CreativeTabs("realtechelements") {
+    public static final CreativeTabs realtechelements = new CreativeTabs("realtechelements") {
         @Override
         public Item getTabIconItem() {
             return ModItems.ingots;
         }
     };
 
-    public static final CreativeTabs pdoxcoretoolsandarmor = new CreativeTabs("realtechtoolsandarmor") {
+    public static final CreativeTabs realtechtoolsandarmor = new CreativeTabs("realtechtoolsandarmor") {
         @Override
         public Item getTabIconItem() {
             return ModItems.debugger;

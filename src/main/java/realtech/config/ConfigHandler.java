@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Created by WildWolf on 20/09/2016.
  */
-public class ConfigHandeler {
+public class ConfigHandler {
 
     private static Map<String, Configuration> configuration;
     private static File file = null;

@@ -8,16 +8,16 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class CoreConfig {
 
     public static void init(FMLPreInitializationEvent event){
-        ConfigHandeler.initConfig(event, "core");
+        ConfigHandler.initConfig(event, "core");
 
-        ConfigHandeler.setCustomComment("core", "core", "This is for enabling and disabling modules in the mod");
+        ConfigHandler.setCustomComment("core", "core", "This is for enabling and disabling modules in the mod");
 
-        ConfigHandeler.setBoolean("core", "core.oregen", "enabled", true);
-        ConfigHandeler.setBoolean("core", "core.tools", "enabled", true);
-        ConfigHandeler.setBoolean("core", "core.armor", "enabled", true);
-        ConfigHandeler.setBoolean("core", "core.lumberaxe", "enabled", false);
+        ConfigHandler.setBoolean("core", "core.oregen", "enabled", true);
+        ConfigHandler.setBoolean("core", "core.tools", "enabled", true);
+        ConfigHandler.setBoolean("core", "core.armor", "enabled", true);
+        ConfigHandler.setBoolean("core", "core.lumberaxe", "enabled", false);
 
-        ConfigHandeler.saveCfg("core");
+        ConfigHandler.saveCfg("core");
     }
 
 }

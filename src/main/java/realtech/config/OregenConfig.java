@@ -9,21 +9,21 @@ import realtech.util.OreConfigDefault;
 public class OregenConfig {
 
     public static void init(FMLPreInitializationEvent event){
-        ConfigHandeler.initConfig(event, "oregen");
+        ConfigHandler.initConfig(event, "oregen");
 
-        ConfigHandeler.setCustomComment("oregen", "Ores", "Change values based on what you want to happen");
-        ConfigHandeler.setCustomComment("oregen", "Oregen", "use the give command and give yourself the debugger item to see the oregen better");
+        ConfigHandler.setCustomComment("oregen", "Ores", "Change values based on what you want to happen");
+        ConfigHandler.setCustomComment("oregen", "Oregen", "use the give command and give yourself the debugger item to see the oregen better");
 
         for (OreConfigDefault ore: OreConfigDefault.values()) {
-            ConfigHandeler.setInteger("oregen", "ores." + ore.getOre(), "genCount", ore.getGenCount());
-            ConfigHandeler.setInteger("oregen", "ores." + ore.getOre(), "chance", ore.getChance());
-            ConfigHandeler.setInteger("oregen", "ores." + ore.getOre(), "minY", ore.getMiny());
-            ConfigHandeler.setInteger("oregen", "ores." + ore.getOre(), "maxY", ore.getMaxy());
-            ConfigHandeler.setInteger("oregen", "ores." + ore.getOre(), "mininglvl", ore.getMiningLvl());
-            ConfigHandeler.setBoolean("oregen", "ores." + ore.getOre(), "doSpawn", true);
+            ConfigHandler.setInteger("oregen", "ores." + ore.getOre(), "genCount", ore.getGenCount());
+            ConfigHandler.setInteger("oregen", "ores." + ore.getOre(), "chance", ore.getChance());
+            ConfigHandler.setInteger("oregen", "ores." + ore.getOre(), "minY", ore.getMiny());
+            ConfigHandler.setInteger("oregen", "ores." + ore.getOre(), "maxY", ore.getMaxy());
+            ConfigHandler.setInteger("oregen", "ores." + ore.getOre(), "mininglvl", ore.getMiningLvl());
+            ConfigHandler.setBoolean("oregen", "ores." + ore.getOre(), "doSpawn", true);
         }
 
-        ConfigHandeler.saveCfg("oregen");
+        ConfigHandler.saveCfg("oregen");
     }
 
 }

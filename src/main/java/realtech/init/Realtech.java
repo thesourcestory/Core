@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import realtech.proxy.CommonProxy;
 import realtech.recipes.Recipes;
-import realtech.config.ConfigHandeler;
+import realtech.config.ConfigHandler;
 import realtech.util.ModLogger;
 import realtech.util.References;
 import realtech.world.OreGen;
@@ -33,7 +33,7 @@ public class Realtech {
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
         logger.warning("preInit of realtech might take a sec");
-        ConfigHandeler.initConfigs(event);
+        ConfigHandler.initConfigs(event);
 
         ModBlocks.init();
         ModItems.init();
@@ -45,7 +45,7 @@ public class Realtech {
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event) {
         logger.warning("init of realtech might take a sec");
-        if (ConfigHandeler.getBoolean("core", "core.oregen", "enabled", true))
+        if (ConfigHandler.getBoolean("core", "core.oregen", "enabled", true))
             GameRegistry.registerWorldGenerator(new OreGen(), 0);
         Recipes.register();
 

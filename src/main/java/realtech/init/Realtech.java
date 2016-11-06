@@ -39,6 +39,7 @@ public class Realtech {
         ModItems.init();
 
         proxy.registerRenders();
+        ModOreDic.init();
         logger.info("preInit of realtech is done");//*/
     }
 
@@ -49,7 +50,6 @@ public class Realtech {
             GameRegistry.registerWorldGenerator(new OreGen(), 0);
         Recipes.register();
 
-        ModOreDic.init();
         logger.info("init of realtech is done");//*/
     }
 

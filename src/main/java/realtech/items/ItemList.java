@@ -434,7 +434,7 @@ public class ItemList {
         }
 
         public String getOredicName() {
-            return "chunk" + name;
+            return "ore" + name;
         }
 
         public static Chunks byMetadata(int meta){

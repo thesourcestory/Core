@@ -184,22 +184,18 @@ def createJSONsForTextures(File directory, String directoryPath, String type) {
             if(type == "item") {
                 fileLocation = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\models\\item\\" + directoryPath +
                         newFileName.toString() + ".json"
-                println(fileLocation)
             }
             if(type == "block") {
                 fileLocation = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\models\\block\\" + directoryPath +
                         newFileName.toString() + ".json"
-                println(fileLocation)
             }
             if(type == "iblock") {
                 fileLocation = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\models\\item\\" + directoryPath +
                         newFileName.toString() + ".json"
-                println(fileLocation)
             }
             if(type == "state") {
                 fileLocation = ".\\src\\main\\resources\\assets\\" + archivesBaseName + "\\blockstates\\" +
                         newFileName.toString() + ".json"
-                println(fileLocation)
             }
             File jsonFile = new File(fileLocation);
             if (!jsonFile.exists()) {

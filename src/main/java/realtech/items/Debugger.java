@@ -25,8 +25,7 @@ public class Debugger extends Item {
 
     }
 
-    @Override
-    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+    public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if (!worldIn.isRemote) {
             logger.info("Server starting on setting blocks");
             int oldy = 0;
@@ -69,11 +68,11 @@ public class Debugger extends Item {
                             for (int v = 0; v < 16; v++) {
                                 IBlockState water = Blocks.WATER.getStateFromMeta(v);
                                 IBlockState lava = Blocks.LAVA.getStateFromMeta(v);
-                                if (worldIn.getBlockState(blockPos) == leaves || worldIn.getBlockState(blockPos) == darkoakleaf) {
+                                /*if (worldIn.getBlockState(blockPos) == leaves || worldIn.getBlockState(blockPos) == darkoakleaf) {
                                     worldIn.setBlockState(blockPos, oaklog, 2);
                                     worldIn.notifyBlockUpdate(blockPos, old, oaklog, 2);
                                 }//*/
-                                /* if ((worldIn.getBlockState(blockPos) == redstone || worldIn.getBlockState(blockPos) == fern || worldIn.getBlockState(blockPos) == tallgrass || worldIn.getBlockState(blockPos) == deadbush || worldIn.getBlockState(blockPos) == sandstone || worldIn.getBlockState(blockPos) == sand || worldIn.getBlockState(blockPos) == clay || worldIn.getBlockState(blockPos) == iron || worldIn.getBlockState(blockPos) == gold || worldIn.getBlockState(blockPos) == lapis || worldIn.getBlockState(blockPos) == coal || worldIn.getBlockState(blockPos) == diamond || worldIn.getBlockState(blockPos) == stone || worldIn.getBlockState(blockPos) == leaves || worldIn.getBlockState(blockPos) == wood || worldIn.getBlockState(blockPos) == snow || worldIn.getBlockState(blockPos) == water || worldIn.getBlockState(blockPos) == lava || worldIn.getBlockState(blockPos) == granite || worldIn.getBlockState(blockPos) == diorite || worldIn.getBlockState(blockPos) == andesite || worldIn.getBlockState(blockPos) == dirt || worldIn.getBlockState(blockPos) == grass || worldIn.getBlockState(blockPos) == gravel) && worldIn.getBlockState(blockPos) != air) {
+                                if ((worldIn.getBlockState(blockPos) == redstone || worldIn.getBlockState(blockPos) == fern || worldIn.getBlockState(blockPos) == tallgrass || worldIn.getBlockState(blockPos) == deadbush || worldIn.getBlockState(blockPos) == sandstone || worldIn.getBlockState(blockPos) == sand || worldIn.getBlockState(blockPos) == clay || worldIn.getBlockState(blockPos) == iron || worldIn.getBlockState(blockPos) == gold || worldIn.getBlockState(blockPos) == lapis || worldIn.getBlockState(blockPos) == coal || worldIn.getBlockState(blockPos) == diamond || worldIn.getBlockState(blockPos) == stone || worldIn.getBlockState(blockPos) == leaves || worldIn.getBlockState(blockPos) == wood || worldIn.getBlockState(blockPos) == snow || worldIn.getBlockState(blockPos) == water || worldIn.getBlockState(blockPos) == lava || worldIn.getBlockState(blockPos) == granite || worldIn.getBlockState(blockPos) == diorite || worldIn.getBlockState(blockPos) == andesite || worldIn.getBlockState(blockPos) == dirt || worldIn.getBlockState(blockPos) == grass || worldIn.getBlockState(blockPos) == gravel) && worldIn.getBlockState(blockPos) != air) {
                                     worldIn.setBlockState(blockPos, air, 2);
                                     worldIn.notifyBlockUpdate(blockPos, old, air, 2);
                                 }//*/

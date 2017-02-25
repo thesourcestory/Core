@@ -32,6 +32,7 @@ public class Realtech {
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
+        //*
         logger.warning("preInit of realtech might take a sec");
         ConfigHandler.initConfigs(event);
 
@@ -45,6 +46,7 @@ public class Realtech {
 
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event) {
+        //*
         logger.warning("init of realtech might take a sec");
         if (ConfigHandler.getBoolean("core", "core.oregen", "enabled", true))
             GameRegistry.registerWorldGenerator(new OreGen(), 0);
@@ -55,5 +57,8 @@ public class Realtech {
 
     @Mod.EventHandler
     public static void postInit(FMLPostInitializationEvent event) {
+        //*
+
+        //*/
     }
 }

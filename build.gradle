@@ -4,7 +4,6 @@ buildscript {
     repositories {
         jcenter()
         maven {
-            name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
     }
@@ -20,12 +19,17 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "0.1.1"
+sourceCompatibility = targetCompatibility = "1.8" // Need this here so eclipse task generates correctly.
+compileJava {
+    sourceCompatibility = targetCompatibility = "1.8"
+}
+
+version = "0.1.2"
 group= "realtech"
 archivesBaseName = "realtech"
 
 minecraft {
-    version = "1.10.2-12.18.1.2094"
+    version = "1.11.2-13.20.0.2237"
     runDir = "run"
 
     // the mappings can be changed at any time, and must be in the following format.
@@ -33,7 +37,7 @@ minecraft {
     // stable_#            stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not allways work.
     // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20160518"
+    mappings = "snapshot_20161220"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
